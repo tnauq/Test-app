@@ -1,0 +1,357 @@
+{
+  "id": "electrical",
+  "title": "Technical Test 1 — Electrical",
+  "blurb": "Power path, standby generation, UPS and batteries, redundancy, fundamentals and safety.",
+  "questions": [
+    {
+      "topic": "Power distribution",
+      "q": "In the normal AWS power path, what sits between the main switchgear and the UPS?",
+      "choices": ["The rPDU", "The automatic transfer switch (ATS)", "The busway tap box", "The server power supply"],
+      "answer": 1,
+      "why": "Utility → transformer (MV to 480V) → main switchgear → ATS → UPS → PDU (480V to 208/120V) → busway/tap box → rPDU → server supply."
+    },
+    {
+      "topic": "Power distribution",
+      "q": "Medium voltage (MV) distribution is roughly what range?",
+      "choices": ["600V–4kV", "12kV–35kV", "69kV–345kV", "120V–480V"],
+      "answer": 1,
+      "why": "HV is transmission-level, MV is distribution at roughly 12–35kV, LV is 480V and below inside the building."
+    },
+    {
+      "topic": "Power distribution",
+      "q": "Where does the second step-down happen and to what voltage?",
+      "choices": ["At the ATS, 480V to 277V", "At the UPS, 480V to 240V", "At the PDU, 480V to 208/120V", "At the rPDU, 208V to 120V"],
+      "answer": 2,
+      "why": "The utility transformer drops MV to 480V; the PDU drops 480V to 208/120V for the racks."
+    },
+    {
+      "topic": "Power distribution",
+      "q": "How does a transformer change voltage?",
+      "choices": ["Through magnetic coupling between windings, with no direct electrical connection", "By rectifying and re-inverting the waveform", "By mechanically switching taps under load", "By resistive voltage division"],
+      "answer": 0,
+      "why": "Magnetic coupling between two circuits. Step-down trades voltage for current. No moving parts and no direct connection between windings."
+    },
+    {
+      "topic": "Power distribution",
+      "q": "Which best describes switchgear?",
+      "choices": ["The rack-level power strip servers plug into", "The assembly of breakers, disconnects, protective relays and busbars that distributes and protects main power", "A device that converts AC to DC for battery charging", "Overhead bus-bar distribution running above the rows"],
+      "answer": 1,
+      "why": "Switchgear is where large-scale switching and fault protection happens."
+    },
+    {
+      "topic": "Power distribution",
+      "q": "What is the difference between a PDU and an rPDU?",
+      "choices": ["They are the same thing, different vendors", "The PDU is floor-level and transforms/distributes; the rPDU is the strip in the rack servers plug into", "The rPDU transforms 480V down; the PDU only monitors", "The PDU is DC and the rPDU is AC"],
+      "answer": 1,
+      "why": "PDU = floor unit doing transformation and branch distribution. rPDU = in-rack power strip."
+    },
+    {
+      "topic": "Power distribution",
+      "q": "What is a tap box?",
+      "choices": ["A junction box where conductors are spliced inside a wall", "The point where a circuit is tapped off an overhead busway to feed a rack without cutting conductors", "A metering enclosure on the utility side", "A terminal block inside the PDU"],
+      "answer": 1,
+      "why": "Busway is overhead bus-bar distribution; the tap box is how you pull a circuit off it for a rack."
+    },
+    {
+      "topic": "Power distribution",
+      "q": "Why does current balance across sources matter at the rack?",
+      "choices": ["Unbalanced load damages the server power supplies", "Racks are dual-fed; if one side carries most of the load and fails, the other may not be able to pick up the whole load", "It keeps the neutral conductor from carrying current", "Balance is only a metering concern, not an operational one"],
+      "answer": 1,
+      "why": "Dual-fed racks: an unbalanced pair means one source may be overloaded while the other is light, defeating the redundancy."
+    },
+    {
+      "topic": "Standby power",
+      "q": "In a utility loss, what carries the critical load first?",
+      "choices": ["The generator, within about two seconds", "The UPS, instantly, off battery", "The ATS, by bridging both sources", "The PDU capacitor bank"],
+      "answer": 1,
+      "why": "The UPS picks up instantly so servers see no interruption; the generator takes seconds to start and stabilize before the ATS transfers."
+    },
+    {
+      "topic": "Standby power",
+      "q": "Why aren't a UPS and generator interchangeable?",
+      "choices": ["The UPS is instant but only lasts minutes; the generator takes seconds to start but runs indefinitely", "The generator is instant but low-capacity; the UPS is slow but high-capacity", "The UPS handles mechanical load and the generator handles IT load", "They are interchangeable in a 2N design"],
+      "answer": 0,
+      "why": "The UPS bridges the gap until the generator is stable and carrying the load."
+    },
+    {
+      "topic": "Standby power",
+      "q": "What does an ATS monitor on the normal source?",
+      "choices": ["Current and power factor", "Voltage and frequency", "Harmonic distortion and phase rotation only", "Ground fault current"],
+      "answer": 1,
+      "why": "On loss or out-of-tolerance voltage/frequency it signals the generator to start and transfers once the alternate source is stable."
+    },
+    {
+      "topic": "Standby power",
+      "q": "What distinguishes closed transition from open transition transfer?",
+      "choices": ["Closed transition breaks before making, creating a dead interval", "Closed transition briefly parallels both sources so the load never loses power, and requires synchronized sources", "Closed transition can only be done manually", "Closed transition transfers only the mechanical load"],
+      "answer": 1,
+      "why": "Open transition = break-before-make with a brief dead interval. Closed = momentary paralleling, requires synchronization."
+    },
+    {
+      "topic": "Standby power",
+      "q": "Why is there a time delay on retransfer back to utility?",
+      "choices": ["To let the generator reach full operating temperature", "To confirm utility is genuinely stable and not flickering, preventing repeated transfers", "To allow the UPS batteries to fully recharge first", "It is a code requirement with no operational purpose"],
+      "answer": 1,
+      "why": "It prevents the ATS from bouncing back and forth on an unstable utility source."
+    },
+    {
+      "topic": "Standby power",
+      "q": "Why does a generator run a cooldown period after retransfer?",
+      "choices": ["To burn off unburned fuel in the exhaust", "To let the engine cool gradually — an immediate hot shutdown causes thermal stress and shortens engine life", "To recharge the starting batteries", "To verify the ATS transferred correctly"],
+      "answer": 1,
+      "why": "It runs unloaded for a period so the engine cools down gradually."
+    },
+    {
+      "topic": "Standby power",
+      "q": "A generator cranks but won't start. Which check is most likely to be skipped and most likely to be the cause?",
+      "choices": ["Testing batteries under crank load rather than at resting voltage", "Checking the coolant level", "Checking the air filter restriction gauge", "Checking the alternator output voltage"],
+      "answer": 0,
+      "why": "Also check fuel supply/valves, filters and water separator, air in the fuel system, stored controller faults, E-stop and safety shutdowns."
+    },
+    {
+      "topic": "Standby power",
+      "q": "The generator starts but will not take load. What is the most relevant first check?",
+      "choices": ["Oil level and oil pressure", "Whether the ATS is seeing correct voltage and frequency from the generator, plus ATS control power and the generator breaker", "Fuel polishing records", "Block heater operation"],
+      "answer": 1,
+      "why": "Then look at the voltage regulator and governor, and whether the set is actually reaching rated voltage and frequency."
+    },
+    {
+      "topic": "Standby power",
+      "q": "Why are starting batteries the most common generator failure point?",
+      "choices": ["They are undersized by most manufacturers", "They sit idle at float, degrade silently, and can read fine at rest yet collapse under crank load", "They are exposed to engine vibration", "They discharge during weekly exercise runs"],
+      "answer": 1,
+      "why": "Failure only shows up under starting current, which is why load-based battery testing matters."
+    },
+    {
+      "topic": "Standby power",
+      "q": "What is wet stacking?",
+      "choices": ["Water accumulating in the fuel tank from condensation", "Unburned fuel accumulating in the exhaust when a diesel runs at light load for extended periods", "Coolant leaking into the cylinders", "Oil carryover into the turbocharger at high load"],
+      "answer": 1,
+      "why": "Prevented by periodic loaded operation — which is one reason load bank testing exists."
+    },
+    {
+      "topic": "Standby power",
+      "q": "Why isn't a no-load exercise run a substitute for a load bank test?",
+      "choices": ["A no-load run doesn't prove rated capacity and doesn't load the diesel enough to prevent wet stacking", "No-load runs void the manufacturer warranty", "No-load runs cannot be logged in the BMS", "A no-load run overheats the alternator"],
+      "answer": 0,
+      "why": "Load banking applies an artificial load to prove the unit can actually carry rated capacity."
+    },
+    {
+      "topic": "Standby power",
+      "q": "What is a DRUPS?",
+      "choices": ["A dual-redundant UPS with two battery strings", "A diesel rotary UPS using flywheel rotational energy to bridge the gap while the engine starts", "A DC rectifier unit for battery plant supply", "A distributed redundant power system across two utility feeds"],
+      "answer": 1,
+      "why": "It's an alternative to a battery UPS — stored rotational energy carries the load until the diesel picks up."
+    },
+    {
+      "topic": "UPS and batteries",
+      "q": "In a UPS, what does the rectifier do?",
+      "choices": ["Converts DC from the battery back to AC for the load", "Converts incoming AC to DC", "Routes load around the UPS on a fault", "Regulates output frequency to match the bypass source"],
+      "answer": 1,
+      "why": "Rectifier AC→DC, battery stores DC, inverter DC→clean AC, static bypass is the automatic fault path, maintenance bypass is the manual service path."
+    },
+    {
+      "topic": "UPS and batteries",
+      "q": "What does double conversion accomplish?",
+      "choices": ["It doubles the runtime of the battery string", "Power always flows rectifier-then-inverter, so the load is fully isolated from utility sags, surges and frequency variation", "It converts three-phase to single-phase for rack distribution", "It allows the UPS to run without batteries"],
+      "answer": 1,
+      "why": "The output is regenerated clean rather than merely filtered."
+    },
+    {
+      "topic": "UPS and batteries",
+      "q": "Static bypass versus maintenance bypass:",
+      "choices": ["Static is manual and used for service; maintenance is automatic on a fault", "Static is automatic and instantaneous on a UPS fault; maintenance is a manual switch letting techs work on the UPS with load still energized", "Both are automatic; they differ only in speed", "Maintenance bypass drops the load briefly by design"],
+      "answer": 1,
+      "why": "Static protects the load automatically. Maintenance bypass is a deliberate operator action."
+    },
+    {
+      "topic": "UPS and batteries",
+      "q": "How long is a data center UPS typically designed to carry the load?",
+      "choices": ["About 5 to 15 minutes", "About 60 to 90 minutes", "About 4 hours", "Long enough to ride through a typical multi-hour outage"],
+      "answer": 0,
+      "why": "It only has to bridge until the generator picks up."
+    },
+    {
+      "topic": "UPS and batteries",
+      "q": "What does specific gravity tell you about a flooded cell?",
+      "choices": ["Terminal torque adequacy", "State of charge and cell health — a cell reading low relative to its neighbors is failing", "Internal resistance at full discharge", "Electrolyte temperature"],
+      "answer": 1,
+      "why": "It's the density of the electrolyte relative to water, measured with a hydrometer."
+    },
+    {
+      "topic": "UPS and batteries",
+      "q": "Why does a battery room need ventilation?",
+      "choices": ["To remove sulfuric acid vapor, which is corrosive", "Charging lead-acid batteries produce hydrogen, which is explosive at concentration", "To keep the room above the minimum rated temperature", "To prevent dust accumulation on terminals"],
+      "answer": 1,
+      "why": "Ventilation keeps hydrogen below dangerous levels. It's also why battery rooms are a fire and explosion concern."
+    },
+    {
+      "topic": "UPS and batteries",
+      "q": "How does temperature affect battery plant?",
+      "choices": ["High temperature increases capacity; low temperature is harmless", "High temperature accelerates degradation and shortens life; low temperature reduces available capacity", "Temperature only matters for VRLA, not flooded cells", "Batteries are rated at 100°F, so warmer rooms are preferred"],
+      "answer": 1,
+      "why": "Batteries are rated at a specific temperature, typically 77°F."
+    },
+    {
+      "topic": "UPS and batteries",
+      "q": "Float charge versus equalize charge:",
+      "choices": ["Float is a periodic high-voltage charge; equalize is continuous", "Float is a continuous low-level charge keeping the battery topped off; equalize is a controlled higher-voltage charge to bring cells back into balance", "Float applies only to VRLA; equalize applies only to flooded", "They are two names for the same charging mode"],
+      "answer": 1,
+      "why": "Float prevents overcharge during standby; equalize corrects cell imbalance."
+    },
+    {
+      "topic": "UPS and batteries",
+      "q": "Why is breaker operation on a UPS handled so carefully?",
+      "choices": ["Breaker arcing damages the static switch", "Wrong breaker or wrong order drops the critical load — you transfer to bypass before opening the UPS, not after", "UPS breakers are rated for a limited number of operations", "The inverter cannot restart once tripped"],
+      "answer": 1,
+      "why": "Sequence is the whole point. This is a classic interview probe on procedural discipline."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "Which definition is correct?",
+      "choices": ["N+1 means a fully duplicated system", "2N means one spare unit beyond requirement", "N is exactly the capacity required; N+1 is one spare beyond that; 2N is fully duplicated; 2N+1 is duplicated plus a spare", "2N+1 means two spares beyond requirement"],
+      "answer": 2,
+      "why": "Know these cold — they come up in almost every EOT interview."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "Concurrent maintainability means:",
+      "choices": ["The facility survives an unplanned equipment failure without dropping load", "Any single piece of equipment can be removed from service for maintenance without dropping the critical load", "Maintenance can be performed by multiple crews at once", "Two systems can be maintained on the same schedule"],
+      "answer": 1,
+      "why": "That's planned work. Fault tolerance is the unplanned-failure equivalent."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "A target of 99.9999% uptime corresponds to roughly what downtime per year?",
+      "choices": ["About 30 seconds", "About 5 minutes", "About 52 minutes", "About 8 hours"],
+      "answer": 0,
+      "why": "Six nines is roughly 30 seconds annually — which is why single points of failure are designed out."
+    },
+    {
+      "topic": "Monitoring",
+      "q": "PUE is defined as:",
+      "choices": ["IT equipment power divided by total facility power", "Total facility power divided by IT equipment power, with cooling the main thing driving it up", "Cooling power divided by IT power", "Water consumed per unit of IT energy"],
+      "answer": 1,
+      "why": "1.0 is theoretically perfect. WUE is the water metric, and evaporative cooling trades one against the other."
+    },
+    {
+      "topic": "Monitoring",
+      "q": "Which system monitors breaker status, metering, power quality and electrical alarms?",
+      "choices": ["BMS", "EPMS", "SCADA-lite", "The rPDU controller"],
+      "answer": 1,
+      "why": "EPMS = electrical plant. BMS = mechanical: chillers, CRAHs, pumps, temperature, humidity, airflow."
+    },
+    {
+      "topic": "Monitoring",
+      "q": "Why do rounds still matter when you have a BMS?",
+      "choices": ["Rounds are a regulatory requirement with no operational value", "Physical rounds catch what sensors miss — leaks, noises, smells, corrosion, loose connections, heat", "The BMS only logs data hourly", "Rounds are how the BMS is calibrated"],
+      "answer": 1,
+      "why": "Instrumentation doesn't see everything. This is a strong answer to give in an interview."
+    },
+    {
+      "topic": "Monitoring",
+      "q": "A meter reading disagrees with what you physically observe. What's the right move?",
+      "choices": ["Trust the instrument — it's calibrated", "Trust your eyes and log the meter as faulty", "Investigate and verify with a second method; a faulty sensor and a real fault look identical on a screen", "Reset the sensor and re-read"],
+      "answer": 2,
+      "why": "Assuming either one is right without verification is the mistake."
+    },
+    {
+      "topic": "Fundamentals",
+      "q": "The three-phase power formula is:",
+      "choices": ["P = V × I", "P = √3 × V × I × power factor", "P = I² × R × 3", "P = V × I / √3"],
+      "answer": 1,
+      "why": "Ohm's Law is V = I × R; single-phase power is P = V × I."
+    },
+    {
+      "topic": "Fundamentals",
+      "q": "In a wye system, the relationship between line and phase voltage is:",
+      "choices": ["Line = phase", "Line = √3 × phase, which is why 277V phase-to-neutral gives 480V phase-to-phase", "Line = 2 × phase", "Phase = √3 × line"],
+      "answer": 1,
+      "why": "Same relationship gives 120V/208V."
+    },
+    {
+      "topic": "Fundamentals",
+      "q": "Why is three-phase used for large loads?",
+      "choices": ["It is safer at high voltage than single-phase", "More power with less conductor material, constant rather than pulsing power delivery, and efficient motor starting and running", "It eliminates the need for a neutral conductor", "It produces a higher power factor automatically"],
+      "answer": 1,
+      "why": "Constant power delivery is the key motor advantage."
+    },
+    {
+      "topic": "Fundamentals",
+      "q": "Poor power factor means:",
+      "choices": ["Voltage is below nominal at the load", "Current is flowing that does no useful work, increasing losses and utility cost", "The waveform contains excessive harmonics", "The load is drawing more real power than rated"],
+      "answer": 1,
+      "why": "Power factor is the ratio of real power to apparent power."
+    },
+    {
+      "topic": "Safety",
+      "q": "What actually clears a ground fault?",
+      "choices": ["The earth connection at the ground rod", "The bonding path back to the source — earth is a poor conductor and won't pass enough current to trip a breaker", "The ground fault relay's shunt trip alone", "The neutral-to-ground bond at the load"],
+      "answer": 1,
+      "why": "This is the single most commonly missed electrical concept. Grounding is a reference to earth; bonding provides the fault-return path."
+    },
+    {
+      "topic": "Safety",
+      "q": "Which standard governs arc flash boundaries, PPE categories and energized work permits?",
+      "choices": ["NFPA 70 (NEC)", "NFPA 70E", "NFPA 72", "NFPA 25"],
+      "answer": 1,
+      "why": "NFPA 70E is electrical safety in the workplace. The NEC (NFPA 70) governs installation."
+    },
+    {
+      "topic": "Safety",
+      "q": "Which LOTO step is most commonly skipped?",
+      "choices": ["Notifying affected personnel", "Applying the tag alongside the lock", "Verification — testing for zero energy and proving the meter works before and after on a known live source", "Releasing stored energy"],
+      "answer": 2,
+      "why": "Full sequence: identify sources, notify, shut down and isolate, lock and tag, release stored energy, verify zero energy, then work."
+    },
+    {
+      "topic": "Protection",
+      "q": "The two trip mechanisms in a typical molded case breaker are:",
+      "choices": ["Thermal (bimetallic, sustained overload) and magnetic (instantaneous, high short-circuit current)", "Thermal and electronic ground fault", "Magnetic and differential", "Shunt trip and undervoltage release"],
+      "answer": 0,
+      "why": "Fuses sacrifice themselves and must be replaced, but are typically faster on high fault currents."
+    },
+    {
+      "topic": "Protection",
+      "q": "Coordination in a protective scheme means:",
+      "choices": ["All devices trip simultaneously to guarantee isolation", "The device closest to the fault trips first, isolating the smallest possible section", "Upstream devices trip first to protect downstream equipment", "Breakers and fuses are matched by manufacturer"],
+      "answer": 1,
+      "why": "Poor coordination drops far more load than necessary."
+    },
+    {
+      "topic": "Protection",
+      "q": "Conductor sizing depends on more than amperage because of:",
+      "choices": ["Conductor color coding and labeling requirements", "Insulation temperature rating, ambient temperature, bundling of current-carrying conductors, and voltage drop over distance", "Breaker manufacturer specifications", "The power factor of the connected load"],
+      "answer": 1,
+      "why": "Voltage drop is generally kept within 3% on branch circuits."
+    },
+    {
+      "topic": "Motors and drives",
+      "q": "How does a VFD control motor speed?",
+      "choices": ["By varying the voltage applied to the stator", "By rectifying AC to DC then inverting back to AC at a controlled frequency — motor speed follows frequency", "By switching pole configuration in the motor windings", "By mechanically varying the load through a coupling"],
+      "answer": 1,
+      "why": "Speed follows frequency, so pumps and fans run only as hard as needed."
+    },
+    {
+      "topic": "Motors and drives",
+      "q": "Why do VFDs save so much energy on pumps and fans?",
+      "choices": ["They eliminate inrush current entirely", "Affinity laws — power varies roughly with the cube of speed, so 80% speed uses roughly half the power", "They correct power factor to unity", "They allow the motor to run on single-phase supply"],
+      "answer": 1,
+      "why": "The cube relationship is why partial-speed operation is such a large win."
+    },
+    {
+      "topic": "Power quality",
+      "q": "Why do data centers care about harmonics?",
+      "choices": ["They reduce the available fault current at the switchboard", "Distortion from non-linear loads like rectifiers and drives causes overheating in transformers and neutrals and can trip equipment", "They lower the frequency seen by the ATS", "They only affect the generator, not the utility feed"],
+      "answer": 1,
+      "why": "Non-linear loads are everywhere in a data center, which makes this a live concern."
+    },
+    {
+      "topic": "Standby power",
+      "q": "Why is load pickup staggered when a generator starts?",
+      "choices": ["To give the ATS time to verify frequency on each step", "Bringing all loads on at once causes an inrush spike that can overload the generator and cause it to trip or stall", "To reduce harmonic distortion during transfer", "To keep the UPS from returning to float too quickly"],
+      "answer": 1,
+      "why": "Load management modules bring load on in steps. Inrush is many times running current for motors and transformers."
+    }
+  ]
+}

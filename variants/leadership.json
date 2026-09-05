@@ -1,0 +1,273 @@
+{
+  "id": "leadership",
+  "title": "Test 4 — Leadership Principles & STAR",
+  "blurb": "The majority of the interview. Identifying which principle a question targets, structuring answers, and avoiding the failure modes interviewers score against.",
+  "questions": [
+    {
+      "topic": "STAR structure",
+      "q": "In STAR, what does the Situation need to be?",
+      "choices": ["A general description of how you usually handle that type of problem", "A specific event or situation with enough detail for the interviewer to understand", "A summary of your role and responsibilities at that job", "The business context of the company at the time"],
+      "answer": 1,
+      "why": "A generalized description of what you've done in the past is the most common STAR failure. It must be one specific event."
+    },
+    {
+      "topic": "STAR structure",
+      "q": "The most common mistake candidates make in the Action section is:",
+      "choices": ["Giving too much technical detail", "Describing what the team or group did instead of what they personally did — use \"I,\" not \"we\"", "Listing actions out of chronological order", "Failing to name the tools used"],
+      "answer": 1,
+      "why": "Keep the focus on YOU: what specific steps did you take, what was your particular contribution."
+    },
+    {
+      "topic": "STAR structure",
+      "q": "A strong Result section should:",
+      "choices": ["Stay modest so you don't appear to be taking credit", "Contain multiple positive results, quantified where possible, plus what you learned — and don't be shy about taking credit", "Focus on what the team achieved that quarter", "End with what you would do differently next time"],
+      "answer": 1,
+      "why": "Amazon is data and metric driven. Percentages, numbers, scale of impact."
+    },
+    {
+      "topic": "STAR structure",
+      "q": "You say a project improved usability by 17%. What does an Amazon interviewer most want next?",
+      "choices": ["The technical method used to measure it", "The scale of impact — did other teams pick it up, did you coach others, how far did it reach", "A comparison to industry benchmarks", "Confirmation that your manager approved it"],
+      "answer": 1,
+      "why": "The prep material asks this explicitly: on what scale did you have an impact, did it get picked up by other teams, did you coach others."
+    },
+    {
+      "topic": "Interview strategy",
+      "q": "Why should you avoid telling the same story to more than one interviewer?",
+      "choices": ["Interviewers compare notes after the loop and repeated stories leave them with insufficient data", "It suggests you only have one accomplishment", "The scheduling system flags duplicate examples", "It wastes interview time"],
+      "answer": 0,
+      "why": "They meet post-interview and exchange notes. Repeating a story shrinks the evidence pool they can score from."
+    },
+    {
+      "topic": "Interview strategy",
+      "q": "How many strong stories should you prepare, and how should they be built?",
+      "choices": ["One per Leadership Principle, kept short and distinct", "A smaller number of robust, high-impact career-highlight stories, each built out enough to demonstrate multiple LPs from different angles", "As many as possible, briefly sketched", "Three, one for each of situation, conflict, and failure"],
+      "answer": 1,
+      "why": "The prep material: your stories will potentially have multiple examples of the LPs, and the more robust they are, the better data interviewers collect."
+    },
+    {
+      "topic": "Interview strategy",
+      "q": "You're asked a technical question you can't answer. The best response is:",
+      "choices": ["A confident best guess based on related knowledge", "Say so honestly and describe what you'd want to learn and how you'd find out", "Redirect to a related topic you do know well", "Ask the interviewer to move on to the next question"],
+      "answer": 1,
+      "why": "An honest answer scores better than a confident guess that collapses under a follow-up. For mechanical gaps specifically: explain how you understand the system to work, then what you'd want to learn."
+    },
+    {
+      "topic": "Interview strategy",
+      "q": "Why does asking clarifying questions help you in an Amazon interview?",
+      "choices": ["It buys thinking time before answering", "Workplace situations are often ambiguous — asking gives you a clearer understanding and shows the interviewer how you dive deep on issues", "It signals you are engaged and interested in the team", "It shifts scoring responsibility to the interviewer"],
+      "answer": 1,
+      "why": "The prep material says interviews deliberately include ambiguous situations. Clarifying questions are scored, not tolerated."
+    },
+    {
+      "topic": "Interview strategy",
+      "q": "Roughly how long is each interview session and how many Amazonians will you meet onsite?",
+      "choices": ["30 minutes each, 2–3 interviewers", "45 minutes each, 4–7 interviewers, a mix of managers and peers plus colleagues from other teams", "60 minutes each, 3 interviewers", "45 minutes each, 8–10 interviewers"],
+      "answer": 1,
+      "why": "A phone interview is usually one session. Schedules change often, so flexibility is expected."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you went out of your way to solve a problem for someone who relied on your work.\" Which LP is primarily being tested?",
+      "choices": ["Deliver Results", "Customer Obsession", "Ownership", "Earn Trust"],
+      "answer": 1,
+      "why": "Leaders start with the customer and work backwards, working vigorously to earn and keep customer trust. In a data center your customer is uptime for the workloads in your building."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you took on something outside your job description.\" Which LP?",
+      "choices": ["Bias for Action", "Ownership", "Invent and Simplify", "Learn and Be Curious"],
+      "answer": 1,
+      "why": "Leaders are owners, think long term, act on behalf of the entire company, and never say \"that's not my job.\""
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you disagreed with your manager's decision.\" Which LP?",
+      "choices": ["Are Right, A Lot", "Have Backbone; Disagree and Commit", "Earn Trust", "Insist on the Highest Standards"],
+      "answer": 1,
+      "why": "Leaders are obligated to respectfully challenge decisions when they disagree, even when uncomfortable — and once a decision is made, commit wholly."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "What is the most common way candidates fail a Have Backbone question?",
+      "choices": ["Choosing a disagreement with a peer rather than a manager", "Telling a story where they disagreed but never actually committed once the decision was made", "Being too aggressive in describing the disagreement", "Failing to name the data they used"],
+      "answer": 1,
+      "why": "The principle has two halves. A story that stops at \"I was right and they didn't listen\" misses the second half entirely."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time a metric said one thing but you suspected something else was going on.\" Which LP?",
+      "choices": ["Dive Deep", "Are Right, A Lot", "Frugality", "Deliver Results"],
+      "answer": 0,
+      "why": "Leaders operate at all levels, stay connected to the details, audit frequently, and are skeptical when metrics and anecdote differ. No task is beneath them."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "A meter reading disagrees with what you physically observe on rounds, and you investigate rather than assume. Which LP does this demonstrate best?",
+      "choices": ["Bias for Action", "Dive Deep", "Insist on the Highest Standards", "Ownership"],
+      "answer": 1,
+      "why": "This is a technical answer that doubles as an LP answer — a strong pattern to use throughout the loop."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you had to act without complete information.\" Which LP?",
+      "choices": ["Bias for Action", "Are Right, A Lot", "Think Big", "Learn and Be Curious"],
+      "answer": 0,
+      "why": "Speed matters in business; many decisions are reversible and don't need extensive study. Calculated risk-taking is valued."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you were vocally self-critical.\" Which LP?",
+      "choices": ["Have Backbone", "Earn Trust", "Insist on the Highest Standards", "Hire and Develop the Best"],
+      "answer": 1,
+      "why": "Leaders listen attentively, speak candidly, treat others respectfully, and are vocally self-critical even when it's awkward. They benchmark themselves against the best."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you achieved a result with fewer resources than you wanted.\" Which LP?",
+      "choices": ["Deliver Results", "Frugality", "Invent and Simplify", "Ownership"],
+      "answer": 1,
+      "why": "Constraints breed resourcefulness, self-sufficiency and invention. Doing more with less."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you accepted a lower standard than you should have — or refused to.\" Which LP?",
+      "choices": ["Insist on the Highest Standards", "Deliver Results", "Are Right, A Lot", "Customer Obsession"],
+      "answer": 0,
+      "why": "Leaders have relentlessly high standards that many think are unreasonably high, and they drive defects out of processes rather than tolerating them."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you had to hit a deadline despite a significant setback.\" Which LP?",
+      "choices": ["Bias for Action", "Deliver Results", "Ownership", "Have Backbone"],
+      "answer": 1,
+      "why": "Leaders focus on key inputs, deliver with the right quality and in a timely fashion, and never settle despite setbacks."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you taught someone something or raised the capability of your team.\" Which LP?",
+      "choices": ["Earn Trust", "Hire and Develop the Best", "Ownership", "Learn and Be Curious"],
+      "answer": 1,
+      "why": "Leaders raise the performance bar with every hire and promotion, recognize exceptional talent, and develop others — including through mechanisms like coaching."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you simplified a process or eliminated unnecessary steps.\" Which LP?",
+      "choices": ["Frugality", "Invent and Simplify", "Insist on the Highest Standards", "Think Big"],
+      "answer": 1,
+      "why": "Leaders expect innovation, always find ways to simplify, are externally aware, and aren't limited by \"not invented here.\""
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you learned something outside your area to solve a problem.\" Which LP?",
+      "choices": ["Learn and Be Curious", "Dive Deep", "Invent and Simplify", "Are Right, A Lot"],
+      "answer": 0,
+      "why": "Leaders are never done learning and always seek to improve themselves. Strong LP to pair with a career change or a new equipment type."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you sought out a perspective that contradicted your own view.\" Which LP?",
+      "choices": ["Earn Trust", "Are Right, A Lot", "Have Backbone", "Dive Deep"],
+      "answer": 1,
+      "why": "Leaders have strong judgment and good instincts, seek diverse perspectives, and work to disconfirm their beliefs — that last clause is the part candidates miss."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you proposed something bigger than what you were asked for.\" Which LP?",
+      "choices": ["Think Big", "Invent and Simplify", "Ownership", "Bias for Action"],
+      "answer": 0,
+      "why": "Thinking small is a self-fulfilling prophecy. Leaders create and communicate a bold direction that inspires results."
+    },
+    {
+      "topic": "Identify the LP",
+      "q": "\"Tell me about a time you identified a safety risk others had accepted as normal.\" Which LPs does this hit hardest?",
+      "choices": ["Frugality and Bias for Action", "Ownership and Insist on the Highest Standards, with a Success and Scale Bring Broad Responsibility angle", "Think Big and Invent and Simplify", "Customer Obsession and Frugality"],
+      "answer": 1,
+      "why": "Safety stories are gold for an EOT role. Amazon also has \"Success and Scale Bring Broad Responsibility\" and \"Strive to be Earth's Best Employer,\" both of which safety work speaks to."
+    },
+    {
+      "topic": "Answer quality",
+      "q": "Which opening is the strongest Situation for a Deliver Results question?",
+      "choices": ["\"In my role I was generally responsible for making sure PMs got completed on schedule.\"", "\"In March, two of our four generators were down for a fuel system repair the same week a load bank test was scheduled, and we had a hard date from the client.\"", "\"We were a small team and always under pressure, so we had to prioritize.\"", "\"My manager asked me to take on a difficult project that year.\""], 
+      "answer": 1,
+      "why": "Specific event, specific timeframe, specific constraint. Everything else is generalized description, which is the thing STAR explicitly warns against."
+    },
+    {
+      "topic": "Answer quality",
+      "q": "You're describing a project you led. Which phrasing scores best?",
+      "choices": ["\"We rebuilt the PM schedule and we cut overdue work orders in half.\"", "\"I rebuilt the PM schedule around equipment criticality, and overdue work orders dropped from 40 to 6 in two months.\"", "\"The team decided to rebuild the PM schedule and it went well.\"", "\"Management asked us to reduce overdue work orders, and we did.\""],
+      "answer": 1,
+      "why": "\"I\" statements plus a quantified before-and-after. Amazon wants your contribution isolated and measured."
+    },
+    {
+      "topic": "Answer quality",
+      "q": "An interviewer asks a follow-up you didn't expect about a story you told. Why is that a good sign?",
+      "choices": ["It means they liked the story and want more detail", "It means they're testing whether the story is real and whether you were actually in the details — which is Dive Deep", "It means they're running out of prepared questions", "It means your original answer was too short"],
+      "answer": 1,
+      "why": "Robust stories survive follow-ups. Thin or borrowed stories don't, which is why depth matters more than quantity."
+    },
+    {
+      "topic": "Answer quality",
+      "q": "What should you avoid doing when describing a failure?",
+      "choices": ["Naming the failure explicitly", "Choosing a failure that isn't really a failure, or blaming external factors rather than owning your part and what you changed afterward", "Describing the impact in numbers", "Explaining what you learned"],
+      "answer": 1,
+      "why": "Vocally self-critical is an actual expectation under Earn Trust. A disguised humblebrag reads as evasive."
+    },
+    {
+      "topic": "Answer quality",
+      "q": "Amazon's material describes it as a data and metric driven company. Practically, that means:",
+      "choices": ["You should cite industry statistics in your answers", "Use data points — percentages, numbers, before-and-after figures — to catalyze and justify decisions you made, including continuous improvement projects", "You should ask for the team's KPIs during the interview", "You should avoid anecdotes entirely"],
+      "answer": 1,
+      "why": "Highlighting continuous improvement projects with their metrics is called out specifically in the prep material."
+    },
+    {
+      "topic": "Answer quality",
+      "q": "You're asked \"Tell me about yourself.\" What is this actually for?",
+      "choices": ["A warm-up with no scoring impact", "A prepared, deliberate answer framing your background toward the role — the material lists it as something to prepare specifically", "An opportunity to walk through your resume chronologically", "A chance to ask questions about the team"],
+      "answer": 1,
+      "why": "It's the one question you know is coming. Treat it as a prepared answer, not improvisation."
+    },
+    {
+      "topic": "Bridging to EOT",
+      "q": "You have generator, ATS and three-phase experience but limited chiller experience. The best interview strategy is:",
+      "choices": ["Steer every mechanical question back to electrical work", "Explain that a chiller and a generator cooling system solve the same problem — heat picked up in one place, rejected in another — then say what you'd want to learn", "Describe chiller theory confidently without flagging the experience gap", "Say mechanical isn't part of the role you're targeting"],
+      "answer": 1,
+      "why": "Saying the bridge out loud shows reasoning rather than recitation. \"I haven't maintained chillers in the field; here's how I understand the system works\" is a strong answer, not a weak one."
+    },
+    {
+      "topic": "Bridging to EOT",
+      "q": "A technical question overlaps your real experience. What should you add?",
+      "choices": ["A textbook definition first, then the experience", "One sentence connecting the concept to a job you actually did", "The manufacturer and model of the equipment you worked on", "A comparison to how the concept works at larger scale"],
+      "answer": 1,
+      "why": "That one sentence converts a technical answer into evidence, which is what interviewers are actually collecting."
+    },
+    {
+      "topic": "Bridging to EOT",
+      "q": "Asked about a fire system you don't know, the strongest answer is procedural. Which one?",
+      "choices": ["\"I'd look at the panel and trace the zone to find the device.\"", "\"I'd find the sequence of operation for that system before touching it, and I wouldn't take fire protection out of service without notification and an impairment form.\"", "\"I'd call the fire alarm contractor and wait.\"", "\"I'd put it in maintenance mode and start troubleshooting.\""],
+      "answer": 1,
+      "why": "That shows judgment, which is what they're actually testing when the equipment is unfamiliar."
+    },
+    {
+      "topic": "Bridging to EOT",
+      "q": "You escalate a rising room temperature early rather than working it alone for an hour first. Which LP framing makes this a strength rather than an admission?",
+      "choices": ["Bias for Action — you moved fast", "Customer Obsession and Ownership — in a critical facility the cost of downtime far exceeds the cost of asking for help, so you escalate while continuing to work the problem", "Frugality — you avoided unnecessary overtime", "Learn and Be Curious — you used it as a learning opportunity"],
+      "answer": 1,
+      "why": "Escalating early protects the customer's uptime. Framing it that way turns a judgment call into an LP answer."
+    },
+    {
+      "topic": "Practice method",
+      "q": "Why does the prep material insist on answering out loud rather than writing answers down?",
+      "choices": ["Writing takes longer than the interview allows", "The interview is verbal and fluency is what's being scored — writing an answer is not the same as saying it", "Written answers tend to be too detailed", "Interviewers can tell when an answer was memorized in writing"],
+      "answer": 1,
+      "why": "Practice in full sentences as if the interviewer is sitting across from you."
+    },
+    {
+      "topic": "Practice method",
+      "q": "What's the right way to treat a question you couldn't answer cleanly during practice?",
+      "choices": ["Skip it — if it didn't come naturally it's outside your range", "Mark it and come back to it; getting it wrong in practice is free, getting it wrong in the room isn't", "Memorize the model answer verbatim", "Move it to a lower priority than topics you already know"],
+      "answer": 1,
+      "why": "The review page in this app is built exactly for that — work your missed topics, not your strong ones."
+    }
+  ]
+}

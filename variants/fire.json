@@ -1,0 +1,266 @@
+{
+  "id": "fire",
+  "title": "Technical Test 3 — Fire, Suppression & Life Safety",
+  "blurb": "Detection, suppression types, valves and monitoring, and the impairment/escalation procedure Amazon calls out directly.",
+  "questions": [
+    {
+      "topic": "Detection",
+      "q": "What is a FACP?",
+      "choices": ["Fire Area Containment Partition", "Fire Alarm Control Panel — monitors initiating devices, annunciates alarms and troubles, and controls notification and suppression outputs", "Fixed Agent Control Package", "Fire Access Control Point"],
+      "answer": 1,
+      "why": "It's the brain of the system."
+    },
+    {
+      "topic": "Detection",
+      "q": "Why is VESDA common in data centers?",
+      "choices": ["It replaces the need for sprinklers in IT space", "It continuously draws air samples through a pipe network and detects smoke at extremely low concentrations, catching an overheating component long before a conventional detector", "It is the only detection type approved under NFPA 75", "It doubles as a humidity monitoring system"],
+      "answer": 1,
+      "why": "Very Early Smoke Detection Apparatus — an aspirating system."
+    },
+    {
+      "topic": "Detection",
+      "q": "Ionization versus photoelectric detectors:",
+      "choices": ["Ionization detects smoldering fires; photoelectric detects flaming fires", "Ionization detects fast flaming fires by sensing disruption of an ionized current; photoelectric detects smoldering fires by sensing light scattered off smoke particles", "Ionization is used only in ductwork", "Photoelectric detectors respond to heat rather than smoke"],
+      "answer": 1,
+      "why": "Data centers favor photoelectric and aspirating types."
+    },
+    {
+      "topic": "Detection",
+      "q": "A rate-of-rise heat detector triggers on:",
+      "choices": ["An absolute temperature threshold", "A rapid temperature increase, catching a developing fire before the fixed threshold is reached", "Smoke obscuration exceeding a set percentage", "Loss of airflow across the sensing element"],
+      "answer": 1,
+      "why": "Heat detection generally is used where smoke detection would false alarm — dusty or fumey spaces — and is slower than smoke detection."
+    },
+    {
+      "topic": "Detection",
+      "q": "A duct smoke detector's typical output action is:",
+      "choices": ["Releasing the gas suppression agent in that zone", "Shutting down the associated air handler so smoke isn't distributed through the ductwork, and reporting to the panel", "Closing the sprinkler control valve for that area", "Activating the fire pump"],
+      "answer": 1,
+      "why": "Air handlers circulate air — and therefore smoke. Shutting them down also helps gas suppression hold concentration."
+    },
+    {
+      "topic": "Detection",
+      "q": "Initiating devices versus notification appliances:",
+      "choices": ["Initiating devices alert occupants; notification appliances detect conditions", "Initiating devices detect and report (detectors, pull stations, flow switches); notification appliances alert occupants (horns, strobes, speakers)", "Both terms describe the same devices at different points in the circuit", "Initiating devices are manual only; notification appliances are automatic only"],
+      "answer": 1,
+      "why": "Simple vocabulary distinction that interviewers use to check baseline familiarity."
+    },
+    {
+      "topic": "Detection",
+      "q": "Addressable versus conventional systems:",
+      "choices": ["Addressable systems report only the zone; conventional report the exact device", "Addressable devices each report a unique identity so the panel shows exactly which device activated; conventional systems only report the zone, requiring a search", "Addressable systems cannot be supervised", "Conventional systems are required by NFPA 72 in IT spaces"],
+      "answer": 1,
+      "why": "Response time in an emergency depends heavily on this."
+    },
+    {
+      "topic": "Signals",
+      "q": "Alarm, supervisory and trouble mean, respectively:",
+      "choices": ["A fire condition; an impaired fire protection system; a fault in the alarm system itself", "A fault in the alarm system; a fire condition; an impaired system", "A fire condition; a fault in the alarm system; a low battery", "An impaired system; a fire condition; a fault in the alarm system"],
+      "answer": 0,
+      "why": "Alarm = fire. Supervisory = protection capability impaired (closed valve, low air pressure). Trouble = broken wire, failed device."
+    },
+    {
+      "topic": "Signals",
+      "q": "Why is a closed sprinkler control valve a supervisory rather than a trouble condition?",
+      "choices": ["Because it can only be detected manually", "Because the alarm system itself is working fine — it's the fire protection capability that's impaired, reported by a tamper switch on the valve", "Because it is not monitored electrically", "Because supervisory signals do not require investigation"],
+      "answer": 1,
+      "why": "The distinction is about which system is degraded."
+    },
+    {
+      "topic": "Suppression",
+      "q": "The three main suppression types found in data centers are:",
+      "choices": ["Wet pipe, dry pipe, and foam", "Wet pipe sprinklers, pre-action sprinklers, and inert or clean agent gas suppression", "Deluge, standpipe, and CO2", "Water mist, foam, and dry chemical"],
+      "answer": 1,
+      "why": "Know which one your building has — that's the specific question Amazon's material flags."
+    },
+    {
+      "topic": "Suppression",
+      "q": "The main risk of a wet pipe system in a data center is:",
+      "choices": ["Slow response time compared to pre-action", "A damaged head or pipe leak dumps water onto energized equipment with no second line of defense", "It cannot be zoned by room", "Freezing in unheated spaces"],
+      "answer": 1,
+      "why": "Pipes are always filled and pressurized, so any breach discharges immediately."
+    },
+    {
+      "topic": "Suppression",
+      "q": "In a pre-action system, water discharges only when:",
+      "choices": ["The pre-action valve opens on detection", "A detection device activates AND a sprinkler head fuses", "The fire pump reaches rated pressure", "The panel operator manually releases it"],
+      "answer": 1,
+      "why": "Two independent events. That's why a physically damaged head alone won't wet the room."
+    },
+    {
+      "topic": "Suppression",
+      "q": "Single interlock versus double interlock pre-action:",
+      "choices": ["Single requires detection plus loss of air pressure; double requires detection only", "Single fills the pipe when detection activates; double requires both detection activation and loss of air pressure from a fused head before the valve opens", "Single uses one detector; double uses two detectors in the same zone", "Double interlock is a deluge configuration"],
+      "answer": 1,
+      "why": "Double interlock is the most protective against accidental discharge."
+    },
+    {
+      "topic": "Suppression",
+      "q": "How do clean agents and inert gases suppress fire?",
+      "choices": ["By coating surfaces with a residue that blocks oxygen", "By displacing oxygen below the level supporting combustion, or by absorbing heat and interrupting the chemical reaction, leaving no residue", "By cooling the space below the ignition temperature of the fuel", "By raising humidity to prevent ignition"],
+      "answer": 1,
+      "why": "Common agents: FM-200 and Novec 1230 (chemical); Inergen and argon/nitrogen blends (inert); CO2 in some industrial spaces."
+    },
+    {
+      "topic": "Suppression",
+      "q": "Why is CO2 suppression a life-safety concern?",
+      "choices": ["It is corrosive to electronics", "It suppresses by displacing oxygen to levels lethal to people, so it's avoided in normally occupied areas", "It requires a much longer discharge delay than other agents", "It can reignite once concentration drops"],
+      "answer": 1,
+      "why": "Life safety comes before property protection in every fire event."
+    },
+    {
+      "topic": "Suppression",
+      "q": "What is the purpose of a discharge delay and abort switch?",
+      "choices": ["To let the fire pump build pressure before gas release", "To allow evacuation and to let a person abort a false activation before the agent releases", "To sequence multiple zones discharging in order", "To verify room integrity before discharge"],
+      "answer": 1,
+      "why": "Related: gas rooms must be reasonably sealed so the agent reaches and holds design concentration — verified by a room integrity test."
+    },
+    {
+      "topic": "Suppression",
+      "q": "A deluge system would be found where?",
+      "choices": ["In the main data hall for maximum coverage", "In high-hazard areas like fuel storage or transformer yards — all heads are open and the valve floods the whole area at once", "In electrical rooms only", "In office and administrative areas"],
+      "answer": 1,
+      "why": "Not IT space — flooding an entire area at once is the opposite of what a data hall needs."
+    },
+    {
+      "topic": "Suppression",
+      "q": "What does a jockey pump do?",
+      "choices": ["Boosts sprinkler pressure during an actual fire", "Maintains system pressure so the main fire pump doesn't start on minor fluctuations or small leaks", "Circulates water to prevent stagnation", "Supplies the standpipe risers on upper floors"],
+      "answer": 1,
+      "why": "The fire pump itself starts automatically on a pressure drop when city pressure is inadequate."
+    },
+    {
+      "topic": "Valves and devices",
+      "q": "A tamper switch does what?",
+      "choices": ["Detects water moving in a sprinkler line", "Monitors the position of a control valve and sends a supervisory signal if a valve that should be open is closed", "Detects unauthorized panel access", "Confirms the fire department connection is capped"],
+      "answer": 1,
+      "why": "A flow switch is the one that detects water actually moving, indicating a head has opened."
+    },
+    {
+      "topic": "Valves and devices",
+      "q": "Why is a closed valve so dangerous?",
+      "choices": ["It causes water hammer when reopened", "The sprinkler system looks intact but cannot deliver water to that area — closed valves are a leading cause of sprinkler failure in real fires", "It trips the fire pump on low suction pressure", "It voids the impairment form"],
+      "answer": 1,
+      "why": "This is why OS&Y valves show stem position visually and PIVs have an exterior open/shut indicator."
+    },
+    {
+      "topic": "Valves and devices",
+      "q": "An OS&Y valve is distinguished by:",
+      "choices": ["An exterior indicator target reading OPEN or SHUT", "A stem that visibly rises when the valve is open, so position can be confirmed by looking at it", "A built-in flow switch", "Automatic closure on loss of control power"],
+      "answer": 1,
+      "why": "A PIV (Post Indicator Valve) is the exterior one with the visible indicator, controlling the underground supply."
+    },
+    {
+      "topic": "Valves and devices",
+      "q": "An FDC is:",
+      "choices": ["The fire detection controller inside the panel", "The Fire Department Connection — an exterior connection letting the fire department pump water into the sprinkler or standpipe system", "A flow detection circuit on the riser", "A fixed discharge cylinder for clean agent"],
+      "answer": 1,
+      "why": "A standpipe is the vertical pipe with hose connections on each floor so crews don't run line up stairs."
+    },
+    {
+      "topic": "Valves and devices",
+      "q": "Supervision of a fire alarm circuit means:",
+      "choices": ["A technician physically inspects the circuit annually", "The panel continuously monitors circuit integrity so a broken wire or removed device reports as a trouble rather than silently failing", "The circuit is protected by a dedicated breaker", "Signals are duplicated over two independent paths"],
+      "answer": 1,
+      "why": "Silent failure is the thing the design is built to prevent."
+    },
+    {
+      "topic": "Procedure",
+      "q": "Before performing maintenance on a fire protection system, you must:",
+      "choices": ["Place the system in maintenance mode or bypass, notify the fire department and facility management, notify occupants, and file an impairment form", "Notify the monitoring company only", "Place the system in bypass and log the work in the BMS", "Obtain an energized work permit under NFPA 70E"],
+      "answer": 0,
+      "why": "Amazon's own material calls this out directly — it's the most likely question in this whole area because it tests judgment, not equipment knowledge."
+    },
+    {
+      "topic": "Procedure",
+      "q": "An impairment form exists to:",
+      "choices": ["Transfer liability to the contractor performing the work", "Formally record what system and area are degraded, start time, expected restoration and who is responsible — ensuring it's tracked and actually restored; it's an insurance and code requirement", "Authorize a fire watch to be billed", "Document the cause of a false alarm"],
+      "answer": 1,
+      "why": "A fire watch — a person patrolling the impaired area watching for fire — is required when a system is out of service beyond a permitted duration."
+    },
+    {
+      "topic": "Procedure",
+      "q": "The single most important step after finishing fire system work is:",
+      "choices": ["Filing the completed work order", "Restoring the system to normal and verifying it — valves open, panel normal, no bypasses left in place, impairment closed out", "Notifying the fire department that work is complete", "Resetting the panel to clear the event log"],
+      "answer": 1,
+      "why": "A system left impaired is worse than one known to be down, because nobody is compensating for it."
+    },
+    {
+      "topic": "Procedure",
+      "q": "Why notify the monitoring company before testing?",
+      "choices": ["It's required to validate the test results", "Testing sends alarm signals — without notification the fire department responds unnecessarily, which is costly, dangerous and erodes response credibility", "The monitoring company must remotely enable test mode", "To start the impairment clock"],
+      "answer": 1,
+      "why": "Unnecessary responses put crews on the road for nothing and desensitize future response."
+    },
+    {
+      "topic": "Codes",
+      "q": "Match the standard: fire alarm installation and testing, sprinkler installation, sprinkler inspection/testing/maintenance, IT equipment fire protection.",
+      "choices": ["NFPA 13, NFPA 72, NFPA 25, NFPA 70E", "NFPA 72, NFPA 13, NFPA 25, NFPA 75", "NFPA 25, NFPA 75, NFPA 13, NFPA 72", "NFPA 70E, NFPA 72, NFPA 13, NFPA 25"],
+      "answer": 1,
+      "why": "72 = alarm, 13 = sprinkler install, 25 = sprinkler ITM, 75 = IT equipment. NFPA 70E is electrical safety and matters because fire system work often involves energized devices."
+    },
+    {
+      "topic": "Codes",
+      "q": "You find a sprinkler head painted over. What do you do?",
+      "choices": ["Clean the paint off carefully with solvent", "Report and correct it — paint changes the head's thermal response, and heads must be replaced, not cleaned", "Note it for the next annual inspection", "Nothing, provided the head is not obstructed"],
+      "answer": 1,
+      "why": "Related common violation: storage within the minimum clearance below heads, typically 18 inches, which blocks the discharge pattern."
+    },
+    {
+      "topic": "Response",
+      "q": "A fire alarm is on the panel with no visible smoke or fire. What is your process?",
+      "choices": ["Silence and reset, then monitor for a repeat activation", "Treat it as real until proven otherwise — identify the device and location from the panel, go look, verify conditions, and follow site emergency procedure", "Dispatch the fire department and wait outside", "Check the BMS for a corresponding mechanical alarm first"],
+      "answer": 1,
+      "why": "Silencing removes notification while a real condition may exist, and reset clears the event record. A real fire and a faulty detector look identical on the panel."
+    },
+    {
+      "topic": "Response",
+      "q": "The general order of priority in any fire event is:",
+      "choices": ["Property protection, life safety, containment", "Life safety, then containment of the incident, then protection of property and equipment", "Containment, life safety, property protection", "Load protection, life safety, containment"],
+      "answer": 1,
+      "why": "Never invert these. Stating them in order signals the right instincts."
+    },
+    {
+      "topic": "Response",
+      "q": "What is an EOT's role during an actual fire event?",
+      "choices": ["Attempt initial suppression before the fire department arrives", "Life safety first — evacuation and accounting for people; then support the fire department with system knowledge and access, isolate power or systems as directed, and document. You are not a firefighter", "Shut down all electrical and mechanical systems immediately", "Remain at the panel to manage alarm silencing"],
+      "answer": 1,
+      "why": "The explicit \"you are not a firefighter\" framing is the right one to give."
+    },
+    {
+      "topic": "Data center specifics",
+      "q": "Why is fire suppression design different in a data center than a warehouse?",
+      "choices": ["Data centers have lower occupancy so response times are less critical", "The asset is sensitive to both water and downtime — the goal is detecting extremely early and suppressing without damaging equipment or causing an unnecessary outage", "Warehouses require gas suppression while data centers do not", "Data centers have no combustible load"],
+      "answer": 1,
+      "why": "That's why VESDA plus pre-action or clean agent is the typical combination."
+    },
+    {
+      "topic": "Data center specifics",
+      "q": "The classic cause of electrical fires in a facility like this is:",
+      "choices": ["Arcing across dirty insulators", "Loose or poorly torqued connections creating heat — which is why torque specs matter", "Harmonic distortion overheating neutrals", "Static discharge from low humidity"],
+      "answer": 1,
+      "why": "Infrared thermal scanning of panels, breakers and terminations finds these hot spots before they fail or ignite."
+    },
+    {
+      "topic": "Data center specifics",
+      "q": "Why does a data center care about smoke damage even without fire?",
+      "choices": ["Smoke triggers automatic EPO activation", "Smoke is corrosive and conductive and can destroy electronics across an entire room without any flame reaching them", "Smoke residue voids equipment warranties", "Smoke raises the room's dew point"],
+      "answer": 1,
+      "why": "It's why very early detection matters so much more here than in most occupancies."
+    },
+    {
+      "topic": "Data center specifics",
+      "q": "Why are EPO systems controversial?",
+      "choices": ["They are prohibited under NFPA 75", "They kill power to the room, and accidental activation causes total outages — so modern design minimizes or eliminates them where code allows", "They cannot be supervised by the panel", "They conflict with clean agent discharge sequences"],
+      "answer": 1,
+      "why": "Historically required; the risk of accidental activation now drives design away from them."
+    },
+    {
+      "topic": "Data center specifics",
+      "q": "Your responsibility in a hazardous fuel spill is to:",
+      "choices": ["Wait for the environmental contractor without intervening", "Follow site spill response — contain, prevent it reaching drains, use spill kits, notify per the site environmental procedure, and document", "Wash the spill down to the nearest drain with water", "Report it only if it exceeds the reportable quantity"],
+      "answer": 1,
+      "why": "Spill response is a stated EOT responsibility. Diesel storage also requires containment, leak detection, separation and often dedicated suppression."
+    }
+  ]
+}

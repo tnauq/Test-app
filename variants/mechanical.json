@@ -1,0 +1,294 @@
+{
+  "id": "mechanical",
+  "title": "Technical Test 2 — Mechanical",
+  "blurb": "Priority area. Heat transfer, the refrigeration cycle, chilled water plants, CRAH/CRAC, airflow, controls and response.",
+  "questions": [
+    {
+      "topic": "Heat and thermodynamics",
+      "q": "Why does a data center need cooling at all?",
+      "choices": ["Electronics require a narrow humidity band more than a temperature band", "Essentially every watt a server consumes becomes heat — a megawatt of IT load produces a megawatt of heat that must be removed", "Cooling is primarily for the battery plant and switchgear rooms", "To maintain positive building pressure against outside contaminants"],
+      "answer": 1,
+      "why": "Heat load tracks IT load almost one-for-one. That framing is the cleanest way to open a mechanical answer."
+    },
+    {
+      "topic": "Heat and thermodynamics",
+      "q": "Which mode of heat transfer dominates in a data center?",
+      "choices": ["Conduction", "Convection — air and water moving heat", "Radiation", "Evaporation, which is a fourth mode"],
+      "answer": 1,
+      "why": "The three modes are conduction (solid contact), convection (moving fluid) and radiation (emitted energy)."
+    },
+    {
+      "topic": "Heat and thermodynamics",
+      "q": "A ton of cooling equals:",
+      "choices": ["1,000 BTU per hour", "3,412 BTU per hour", "12,000 BTU per hour, from the heat absorbed melting one ton of ice in 24 hours", "100,000 BTU per hour"],
+      "answer": 2,
+      "why": "A BTU is the heat needed to raise one pound of water one degree Fahrenheit."
+    },
+    {
+      "topic": "Heat and thermodynamics",
+      "q": "Sensible versus latent heat:",
+      "choices": ["Sensible changes temperature and is measurable with a thermometer; latent changes state without changing temperature", "Sensible changes state; latent changes temperature", "Sensible applies to air, latent applies to water", "They are the same quantity measured in different units"],
+      "answer": 0,
+      "why": "Latent heat is central to refrigeration — a liquid absorbs a lot of heat evaporating and releases it condensing."
+    },
+    {
+      "topic": "Heat and thermodynamics",
+      "q": "A low delta-T across a cooling coil most likely indicates:",
+      "choices": ["Excess cooling capacity", "Poor heat transfer — fouled coil, low airflow, bypass air, or a valve not opening", "The chilled water setpoint is too low", "Refrigerant overcharge"],
+      "answer": 1,
+      "why": "Delta-T is the difference between entering and leaving temperature. Low delta-T is a classic diagnostic flag."
+    },
+    {
+      "topic": "Refrigeration cycle",
+      "q": "The four main components in order are:",
+      "choices": ["Evaporator, compressor, expansion valve, condenser", "Compressor, condenser, expansion valve, evaporator", "Condenser, compressor, evaporator, expansion valve", "Compressor, evaporator, condenser, expansion valve"],
+      "answer": 1,
+      "why": "Then back to the compressor. Memorize the order — it anchors every follow-up question."
+    },
+    {
+      "topic": "Refrigeration cycle",
+      "q": "What does the compressor do?",
+      "choices": ["Drops pressure sharply to produce a cold liquid", "Raises refrigerant pressure and temperature — low-pressure gas in, high-pressure hot gas out", "Rejects heat to air or water", "Absorbs heat from the air being cooled"],
+      "answer": 1,
+      "why": "It's the pump that drives the whole cycle."
+    },
+    {
+      "topic": "Refrigeration cycle",
+      "q": "What happens in the evaporator?",
+      "choices": ["Hot high-pressure gas rejects heat and condenses to liquid", "Cold low-pressure refrigerant absorbs heat and boils back to gas", "Liquid refrigerant is cooled below its condensing temperature", "Pressure drops suddenly, dropping temperature"],
+      "answer": 1,
+      "why": "The condenser rejects heat; the expansion valve drops pressure; the evaporator absorbs heat."
+    },
+    {
+      "topic": "Refrigeration cycle",
+      "q": "Why is superheat monitored?",
+      "choices": ["To confirm the condenser is rejecting enough heat", "To ensure only gas reaches the compressor — liquid entering a compressor causes serious damage", "To verify the expansion valve is fully closed", "To measure the efficiency of the cooling tower"],
+      "answer": 1,
+      "why": "Subcooling is the mirror check: ensuring solid liquid, not a gas/liquid mix, reaches the expansion valve."
+    },
+    {
+      "topic": "Refrigeration cycle",
+      "q": "Low suction pressure with high superheat suggests:",
+      "choices": ["Overcharge or a flooded evaporator", "Insufficient refrigerant reaching the evaporator — low charge, a restriction, a starving expansion valve, or a plugged filter drier", "Poor condenser heat rejection", "A failed compressor unloader"],
+      "answer": 1,
+      "why": "The evaporator is being starved. High head pressure is the opposite-end symptom set."
+    },
+    {
+      "topic": "Refrigeration cycle",
+      "q": "High head pressure is most likely caused by:",
+      "choices": ["Low refrigerant charge", "Poor heat rejection at the condenser — fouled coil, failed condenser fan, high ambient, non-condensables, or overcharge", "A restriction in the liquid line", "Excessive superheat at the compressor inlet"],
+      "answer": 1,
+      "why": "Head pressure is a condenser-side symptom."
+    },
+    {
+      "topic": "Refrigeration cycle",
+      "q": "Why is a refrigerant leak a compliance issue, not just a performance one?",
+      "choices": ["Refrigerants are regulated — leaks must be found, repaired and documented rather than just topped off", "Leaks void the equipment warranty", "Refrigerant is classified as a hazardous waste requiring a fire watch", "It triggers an automatic impairment form"],
+      "answer": 0,
+      "why": "Performance also drops as charge falls, but the reporting obligation is the part candidates forget."
+    },
+    {
+      "topic": "Chilled water",
+      "q": "Which correctly describes the chilled water path?",
+      "choices": ["Chilled water runs from the cooling tower directly to the CRAH coils", "Servers heat air → CRAH coil transfers that heat to chilled water → chiller pulls heat out → condenser water loop carries it to the cooling tower → atmosphere", "The condenser loop runs inside the building and the chilled water loop runs outside", "Chilled water is evaporated at the CRAH and condensed at the chiller"],
+      "answer": 1,
+      "why": "Chilled water loop = chiller to CRAH coils inside. Condenser water loop = chiller to cooling tower."
+    },
+    {
+      "topic": "Chilled water",
+      "q": "How does a cooling tower actually reject heat?",
+      "choices": ["By conduction through finned tube bundles", "By evaporation — warm condenser water is sprayed over fill while air moves through, and evaporating a portion carries heat away", "By mechanical refrigeration in a secondary circuit", "By radiating heat to the night sky"],
+      "answer": 1,
+      "why": "That's why wet bulb, not dry bulb, sets the tower's performance limit."
+    },
+    {
+      "topic": "Chilled water",
+      "q": "Approach temperature on a cooling tower is:",
+      "choices": ["The difference between entering and leaving water temperature", "The difference between leaving water temperature and ambient wet bulb — a rising approach indicates fouling, scaling, poor airflow or degraded fill", "The difference between wet bulb and dry bulb", "The setpoint minus the deadband"],
+      "answer": 1,
+      "why": "A tower can never cool below wet bulb, so approach is the honest efficiency measure."
+    },
+    {
+      "topic": "Chilled water",
+      "q": "Drift, blowdown and makeup are, respectively:",
+      "choices": ["Evaporated water, treated water, and recirculated water", "Water carried out as droplets; water deliberately discharged to control mineral concentration; water replacing all losses", "Water lost to leaks; water added for pH control; water in the sump", "Airflow bypass; chemical dosing; sump level control"],
+      "answer": 1,
+      "why": "Evaporation concentrates minerals, which is why blowdown exists."
+    },
+    {
+      "topic": "Chilled water",
+      "q": "Why is condenser water treatment necessary?",
+      "choices": ["To prevent refrigerant contamination in the chiller barrel", "Evaporation concentrates minerals causing scale and corrosion, and warm water grows biological fouling including Legionella", "To raise the water's specific heat capacity", "To keep the water from freezing in winter operation"],
+      "answer": 1,
+      "why": "Scale, corrosion and biological growth — treatment controls all three."
+    },
+    {
+      "topic": "Chilled water",
+      "q": "What is a plate-and-frame heat exchanger typically used for in a chilled water plant?",
+      "choices": ["Separating refrigerant from oil in the compressor circuit", "Transferring heat between two loops without mixing them — commonly to enable water-side free cooling and idle the chillers", "Pre-heating makeup water before it enters the tower", "Removing non-condensables from the condenser"],
+      "answer": 1,
+      "why": "It's what lets the tower cool the chilled water loop directly when it's cold enough outside."
+    },
+    {
+      "topic": "Chilled water",
+      "q": "Cavitation in a pump is:",
+      "choices": ["Air entrained in the discharge line causing vibration", "Vapor bubbles forming at the inlet from low pressure and collapsing violently — it damages the impeller and sounds like gravel", "Impeller wear from suspended solids in the water", "Overheating from running against a closed discharge valve"],
+      "answer": 1,
+      "why": "The gravel sound is the classic field tell."
+    },
+    {
+      "topic": "CRAH and air handling",
+      "q": "The difference between a CRAH and a CRAC is:",
+      "choices": ["A CRAH has its own compressor; a CRAC uses chilled water", "A CRAH uses chilled water from a central plant with a coil and fan only; a CRAC has its own refrigerant compressor (direct expansion, self-contained)", "A CRAH serves the whole building; a CRAC serves one row", "They are regional names for the same equipment"],
+      "answer": 1,
+      "why": "H = handler (water). C = conditioner (its own DX circuit)."
+    },
+    {
+      "topic": "CRAH and air handling",
+      "q": "Main components of a CRAH:",
+      "choices": ["Compressor, condenser, expansion valve, evaporator", "Fans, a chilled water coil, a control valve modulating water flow, filters, and controls with temperature and humidity sensing", "Cooling tower, pump, and heat exchanger", "Damper, economizer hood, and a DX coil"],
+      "answer": 1,
+      "why": "No compressor in a CRAH — the refrigeration happens at the central chiller."
+    },
+    {
+      "topic": "CRAH and air handling",
+      "q": "Why do data centers want high sensible cooling and little dehumidification?",
+      "choices": ["Dry air improves server heat transfer", "The heat load is almost entirely sensible dry heat from electronics — removing moisture wastes energy and then requires humidification to add it back", "Dehumidification raises the dew point", "Low humidity reduces the risk of condensation on coils"],
+      "answer": 1,
+      "why": "It's a pure waste loop: dehumidify then re-humidify."
+    },
+    {
+      "topic": "Airflow",
+      "q": "What is bypass air?",
+      "choices": ["Hot exhaust air looping back to a server intake", "Cold supply air that returns to the cooling unit without ever passing through equipment — wasted cooling", "Outside air introduced during economizer mode", "Air that leaks around a closed containment door"],
+      "answer": 1,
+      "why": "Recirculation is the opposite failure: hot exhaust reaching an intake and raising intake temperatures."
+    },
+    {
+      "topic": "Airflow",
+      "q": "What goes wrong when hot and cold air mix?",
+      "choices": ["Coil frost forms at the CRAH", "You cool air that's already cold, waste energy and raise PUE — and server intakes can run hot even though the room average looks fine", "Humidity control becomes impossible", "Static pressure in the plenum drops below setpoint"],
+      "answer": 1,
+      "why": "That's the whole argument for hot aisle / cold aisle containment."
+    },
+    {
+      "topic": "Airflow",
+      "q": "Blanking panels do what?",
+      "choices": ["Seal cable cutouts in the raised floor", "Fill empty rack slots so hot exhaust air can't travel back through the gap to the cold side", "Direct supply air upward from perforated tiles", "Provide EMI shielding between racks"],
+      "answer": 1,
+      "why": "Cheap and highly effective — a good example to cite when asked about low-cost wins."
+    },
+    {
+      "topic": "Airflow",
+      "q": "A perforated tile placed in a hot aisle:",
+      "choices": ["Improves return air temperature to the CRAH", "Wastes cooling by delivering cold supply air where it isn't needed", "Balances static pressure across the plenum", "Is standard practice for containment designs"],
+      "answer": 1,
+      "why": "Tile placement matters. Perf tiles belong in cold aisles."
+    },
+    {
+      "topic": "Environment",
+      "q": "Why does dew point matter in a data center?",
+      "choices": ["It determines the maximum achievable cooling tower performance", "It's the temperature at which moisture condenses out of air — condensation on energized equipment causes faults and corrosion", "It sets the minimum chilled water supply temperature by code", "It is the same as relative humidity expressed in degrees"],
+      "answer": 1,
+      "why": "Relative humidity is moisture as a percentage of what the air could hold at that temperature, and it shifts with temperature even when moisture content doesn't."
+    },
+    {
+      "topic": "Environment",
+      "q": "Humidity too low versus too high:",
+      "choices": ["Too low risks condensation; too high risks static discharge", "Too low risks electrostatic discharge damaging electronics; too high risks condensation, corrosion and conductive contamination", "Too low reduces cooling capacity; too high increases it", "Neither matters if temperature is within ASHRAE limits"],
+      "answer": 1,
+      "why": "ASHRAE publishes the recommended and allowable temperature and humidity envelopes you're maintaining."
+    },
+    {
+      "topic": "Environment",
+      "q": "Why measure at the server intake rather than room average?",
+      "choices": ["Intake sensors are more accurate than room sensors", "The intake is what the equipment actually experiences — room average can look fine while individual intakes run hot from recirculation or poor airflow", "Room average readings are not trended in the BMS", "ASHRAE specifies return-air measurement only"],
+      "answer": 1,
+      "why": "This distinction is a strong thing to volunteer in an interview."
+    },
+    {
+      "topic": "Efficiency",
+      "q": "Air-side versus water-side economization:",
+      "choices": ["Air-side uses a heat exchanger; water-side brings in outside air", "Air-side brings filtered outside air directly into the space; water-side uses a heat exchanger so the tower cools the chilled water loop without running chillers", "Both require the chillers to run at reduced capacity", "Water-side is only usable below freezing"],
+      "answer": 1,
+      "why": "Both are free cooling — the difference is which loop the outside conditions act on."
+    },
+    {
+      "topic": "Efficiency",
+      "q": "How does cooling strategy trade PUE against WUE?",
+      "choices": ["Improving one always improves the other", "Evaporative cooling lowers electrical energy for cooling (lower PUE) but consumes water (higher WUE); air-cooled chillers do the opposite", "WUE only applies to air-cooled plants", "PUE and WUE are unrelated metrics"],
+      "answer": 1,
+      "why": "Naming it as a genuine engineering tradeoff rather than a free win is what scores."
+    },
+    {
+      "topic": "Controls",
+      "q": "Why does trending matter more than a spot reading?",
+      "choices": ["Trends are required for PUE reporting", "A single reading shows the state now; a trend shows a bearing slowly heating or an approach temperature creeping up — catching failure before it happens", "Spot readings can't be logged in the BMS", "Trending eliminates the need for physical rounds"],
+      "answer": 1,
+      "why": "Predictive versus reactive. Good answer for a Dive Deep follow-up too."
+    },
+    {
+      "topic": "Controls",
+      "q": "A deadband is:",
+      "choices": ["The target value the control system drives toward", "The range around setpoint where no control action is taken, preventing constant cycling on small deviations", "The range outside which an alarm is generated", "The delay before a piece of equipment is allowed to restart"],
+      "answer": 1,
+      "why": "The setpoint is the target; the deadband is the tolerance around it."
+    },
+    {
+      "topic": "Controls",
+      "q": "Short cycling is damaging because:",
+      "choices": ["It gradually lowers refrigerant charge", "Frequent starting and stopping causes excessive wear, high inrush and poor efficiency — usually from an oversized unit or bad control setting", "It raises the wet bulb temperature at the tower", "It causes the VFD to trip on overfrequency"],
+      "answer": 1,
+      "why": "Diagnosing it as a sizing or control problem, not an equipment fault, is the useful instinct."
+    },
+    {
+      "topic": "Maintenance",
+      "q": "Why is filter changing more important than it sounds?",
+      "choices": ["Dirty filters release particulates onto server intakes", "A loaded filter restricts airflow, reducing cooling capacity and forcing fans to work harder — simple work with outsized consequence", "Filters are the primary humidity control element in a CRAH", "Filter changes are required to close out impairment forms"],
+      "answer": 1,
+      "why": "Typical CRAH PM: filters, coil cleaning, fan belts and bearings, condensate drain and pan, valve operation, sensor calibration, leak checks."
+    },
+    {
+      "topic": "Troubleshooting",
+      "q": "Room temperature is rising but the chillers appear to be running normally. What's the strongest first move?",
+      "choices": ["Lower the chilled water setpoint and monitor", "Verify the reading is real and not a sensor, then determine whether it's the whole room or localized — localized points to airflow, not capacity", "Start the backup chiller immediately", "Open all perforated tiles to increase supply airflow"],
+      "answer": 1,
+      "why": "Then check CRAHs running, valves open, filters clean, chilled water temperature and flow, containment breaches, blanking panels, tile placement — and escalate early while investigating."
+    },
+    {
+      "topic": "Troubleshooting",
+      "q": "What suggests an airflow problem rather than a capacity problem?",
+      "choices": ["Chilled water supply temperature rising above setpoint", "Localized hot spots while total cooling capacity and chilled water temperatures look normal", "All CRAH units running at 100% fan speed", "Rising approach temperature at the cooling tower"],
+      "answer": 1,
+      "why": "Capacity problems show up broadly; airflow problems show up in specific places."
+    },
+    {
+      "topic": "Troubleshooting",
+      "q": "A pump is running but flow is low. What do you check?",
+      "choices": ["Refrigerant charge and superheat", "Valve positions, strainer blockage, air in the loop, rotation direction, impeller condition, VFD speed command, and whether it's cavitating", "Compressor unloader staging", "Cooling tower fill condition"],
+      "answer": 1,
+      "why": "Work from the cheapest and most likely outward: valves and strainers before impellers."
+    },
+    {
+      "topic": "Procedure",
+      "q": "Putting a system in maintenance mode before work means:",
+      "choices": ["Locking out all electrical energy sources to the unit", "Disabling automatic responses and alarms so your work doesn't trigger a false alarm or unwanted control action — and so the facility knows the system is temporarily impaired", "Switching the unit to manual fan control only", "Transferring the load to the redundant unit"],
+      "answer": 1,
+      "why": "It's about not creating false signals and about the facility knowing the state."
+    },
+    {
+      "topic": "Procedure",
+      "q": "When should you escalate a mechanical problem?",
+      "choices": ["Only after exhausting your own troubleshooting steps", "Early — in a critical facility the cost of downtime far exceeds the cost of asking for help; escalate while continuing to work the problem", "When the customer reports an outage", "Once the BMS generates a critical alarm"],
+      "answer": 1,
+      "why": "Escalating early and continuing to work is the answer that shows judgment rather than ego."
+    },
+    {
+      "topic": "Procedure",
+      "q": "You're facing mechanical equipment you've never seen before. Best approach?",
+      "choices": ["Trace the piping and start with the most accessible component", "Find the documentation and sequence of operation, understand what the system is trying to do, ask someone who knows it, and verify current state before changing anything", "Put it in maintenance mode and begin standard PM", "Wait for a specialist contractor before touching anything"],
+      "answer": 1,
+      "why": "This is also the strongest honest answer when a mechanical question exceeds your field experience."
+    }
+  ]
+}
