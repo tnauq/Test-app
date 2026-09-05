@@ -1,0 +1,8 @@
+{
+  "variants": [
+    { "file": "electrical.json", "label": "Electrical" },
+    { "file": "mechanical.json", "label": "Mechanical" },
+    { "file": "fire.json", "label": "Fire & Life Safety" },
+    { "file": "leadership.json", "label": "Leadership Principles" }
+  ]
+}
