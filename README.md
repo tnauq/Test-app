@@ -1,6 +1,6 @@
 # EOT Prep — Practice Tests
 
-Multiple choice practice for the Amazon Data Center Engineering Operations Technician interview. Four question banks: Electrical, Mechanical, Fire & Life Safety, and Leadership Principles.
+Multiple choice practice for the Amazon Data Center Engineering Operations Technician interview. 255 questions across seven banks covering every section of the Amazon prep material: Electrical, Mechanical, Fire & Life Safety, Redundancy/Monitoring/Racks, Standards & Procedures, Scenarios & Judgment, and Leadership Principles.
 
 After each test you get a score, a per-topic breakdown showing which areas are weak, and every question you missed with your answer, the correct answer, and why. Best scores and missed questions are saved in your browser so you can drill just the ones you got wrong.
 
@@ -32,6 +32,9 @@ variants/
   electrical.json   50 questions
   mechanical.json   41 questions
   fire.json         37 questions
+  monitoring.json   30 questions
+  procedures.json   30 questions
+  scenarios.json    29 questions
   leadership.json   38 questions
 ```
 
