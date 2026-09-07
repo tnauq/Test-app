@@ -1,0 +1,210 @@
+{
+  "id": "scenarios",
+  "title": "Test 7 — Scenarios & Judgment",
+  "blurb": "Mixed situational questions. Less recall, more \"what do you do first\" — which is how the technical interview actually gets asked.",
+  "questions": [
+    {
+      "topic": "Utility loss",
+      "q": "Utility is lost. Thirty seconds later the generator is running but the ATS hasn't transferred. What do you check first?",
+      "choices": ["UPS battery runtime remaining", "Whether the ATS is seeing acceptable voltage and frequency from the generator, plus ATS control power and the generator breaker", "Fuel level in the day tank", "Whether the block heater was energized"],
+      "answer": 1,
+      "why": "Runtime matters and drives your urgency, but the fault is in the transfer path. Also check voltage regulator and governor output and whether the set is reaching rated voltage and frequency."
+    },
+    {
+      "topic": "Utility loss",
+      "q": "During a utility loss, what tells you how much time you actually have?",
+      "choices": ["The generator's rated start time", "The UPS battery runtime — typically only 5 to 15 minutes by design", "The ATS time delay setting", "The generator's fuel capacity"],
+      "answer": 1,
+      "why": "The UPS is designed only to bridge until the generator picks up. That number is why generator start failures are emergencies, not inconveniences."
+    },
+    {
+      "topic": "Utility loss",
+      "q": "Utility returns while you're running on generator. Why doesn't the ATS transfer back immediately?",
+      "choices": ["It waits for the UPS to fully recharge", "A time delay on retransfer confirms utility is genuinely stable and not flickering, preventing repeated transfers", "It requires manual authorization", "It waits for the generator to reach cooldown temperature"],
+      "answer": 1,
+      "why": "After retransfer the generator runs a cooldown unloaded before shutting down, to avoid thermal stress on a hot diesel."
+    },
+    {
+      "topic": "Rackdown",
+      "q": "A dual-fed rack has gone completely down. What does that immediately tell you?",
+      "choices": ["The room has lost cooling", "Both sources failed, or the rack was never truly dual-fed — a single source loss shouldn't drop it", "The rPDU firmware crashed", "An upstream PDU tripped"],
+      "answer": 1,
+      "why": "A rack dropping on one source failure means the redundancy was nominal, not real — often because load wasn't balanced across the two feeds."
+    },
+    {
+      "topic": "Rackdown",
+      "q": "You're first responder to a rackdown. In what order do you work?",
+      "choices": ["Notify the customer, then troubleshoot, then document", "Establish scope (one rack or more), check source status at the rPDU and upstream breaker, escalate while you work, restore, then deep dive the cause", "Restore power immediately by any available means, then investigate", "Wait for the FM to direct the response"],
+      "answer": 1,
+      "why": "Scope first — one rack is a branch problem, several is upstream. Restoring blindly without understanding why can repeat the fault."
+    },
+    {
+      "topic": "Cooling",
+      "q": "Room temperature is climbing but the chillers show normal operation. Best first move?",
+      "choices": ["Lower the chilled water setpoint", "Verify the reading is real and not a sensor, then determine whether it's the whole room or localized — localized points to airflow, not capacity", "Start the redundant chiller", "Open additional perforated tiles"],
+      "answer": 1,
+      "why": "Then check CRAHs running, valves open, filters, chilled water temperature and flow, containment breaches, blanking panels and tile placement. Escalate early while investigating."
+    },
+    {
+      "topic": "Cooling",
+      "q": "One row shows high server intake temperatures while the room average and chilled water temperatures are normal. Most likely cause?",
+      "choices": ["Insufficient chiller capacity", "An airflow problem — recirculation, a containment breach, missing blanking panels, or tiles in the wrong place", "Low refrigerant charge", "A failed CRAH control valve"],
+      "answer": 1,
+      "why": "Capacity problems show up broadly; airflow problems show up in specific places. That distinction is the whole diagnostic."
+    },
+    {
+      "topic": "Cooling",
+      "q": "A CRAH's return air is barely warmer than its supply. What does that low delta-T suggest?",
+      "choices": ["The unit is oversized for the load", "Poor heat transfer or short-circuiting air — fouled coil, low airflow, bypass air, or a valve not opening", "The chilled water supply is too cold", "Humidity is out of range"],
+      "answer": 1,
+      "why": "Bypass air — cold supply returning without passing through equipment — is a very common cause and pure waste."
+    },
+    {
+      "topic": "Cooling",
+      "q": "Cooling tower approach temperature has crept up 3°F over two months with no change in load. What are you looking at?",
+      "choices": ["Normal seasonal variation in wet bulb", "Degrading heat rejection — fouling, scaling, poor airflow or degraded fill; a trend, not a spot reading, is what exposed it", "A chilled water pump running below commanded speed", "Refrigerant undercharge in the chiller"],
+      "answer": 1,
+      "why": "Approach is measured against wet bulb, so it already accounts for ambient. A rising approach is the tower telling you it's getting worse."
+    },
+    {
+      "topic": "Fire",
+      "q": "The fire panel shows an alarm. You walk the area and find no smoke or fire. What now?",
+      "choices": ["Silence and reset, then monitor for reactivation", "Treat it as real until proven otherwise — identify the exact device from the panel, verify conditions at that device, and follow site emergency procedure", "Call the fire department and evacuate regardless", "Check whether the BMS shows a corresponding alarm first"],
+      "answer": 1,
+      "why": "Silencing removes notification while a real condition may exist, and reset clears the record. A real fire and a faulty detector look identical on the panel."
+    },
+    {
+      "topic": "Fire",
+      "q": "The panel shows a supervisory signal on a sprinkler zone. What has probably happened?",
+      "choices": ["A detector has activated", "A control valve has been closed or air pressure has dropped — fire protection capability is impaired even though the alarm system is fine", "A wire has broken in the initiating circuit", "The fire pump has started"],
+      "answer": 1,
+      "why": "Alarm = fire. Supervisory = protection impaired. Trouble = fault in the alarm system itself."
+    },
+    {
+      "topic": "Fire",
+      "q": "A contractor asks you to close a sprinkler control valve so they can work. What's required?",
+      "choices": ["Close it and reopen when they finish", "Maintenance mode or bypass, notification to the fire department and facility management, occupant notification, an impairment form, and a fire watch if it exceeds the permitted duration", "An energized work permit", "Approval from the monitoring company"],
+      "answer": 1,
+      "why": "Closed valves are a leading cause of sprinkler failure in real fires — the system looks intact and can't deliver water."
+    },
+    {
+      "topic": "UPS",
+      "q": "A UPS has transferred to static bypass. What does that mean and what's the urgency?",
+      "choices": ["Normal load-sharing behavior; no action needed", "The UPS faulted and the load is now running unprotected on raw utility — restore protection urgently, because a utility disturbance now reaches the servers", "The unit is in maintenance bypass for scheduled work", "The batteries are recharging after a discharge"],
+      "answer": 1,
+      "why": "Static bypass is automatic and instantaneous on a fault. It saves the load in the moment but removes the conditioning and ride-through."
+    },
+    {
+      "topic": "UPS",
+      "q": "You need to work on a UPS with the load energized. What's the correct path?",
+      "choices": ["Wait for static bypass to engage, then work", "Transfer deliberately to maintenance bypass following the written breaker sequence, then work", "Open the UPS input breaker first, then transfer", "Shift the load to the redundant UPS and open all breakers"],
+      "answer": 1,
+      "why": "Maintenance bypass is the manual path for exactly this. Transfer to bypass before opening the UPS, not after."
+    },
+    {
+      "topic": "Batteries",
+      "q": "During a battery inspection you find one cell with noticeably lower specific gravity than its neighbors. What does this indicate?",
+      "choices": ["The room is running below rated temperature", "That cell is failing — a cell reading low relative to its neighbors is the classic indicator", "The charger is in equalize mode", "Electrolyte level needs topping off across the string"],
+      "answer": 1,
+      "why": "A string is only as good as its weakest cell. This is exactly what flooded-cell PM exists to catch."
+    },
+    {
+      "topic": "Batteries",
+      "q": "The battery room ventilation fan has failed. How urgent is this?",
+      "choices": ["Low — it affects battery life over months", "Urgent — charging lead-acid batteries produce hydrogen, which is explosive at concentration; restore ventilation or take compensating measures immediately", "Moderate — monitor temperature and schedule a repair", "Not urgent if the batteries are on float rather than equalize"],
+      "answer": 1,
+      "why": "Battery rooms need ventilation, hydrogen detection and appropriate suppression precisely because of this hazard."
+    },
+    {
+      "topic": "Generators",
+      "q": "A weekly no-load exercise run has passed every time for a year. What have you actually proven?",
+      "choices": ["That the unit can carry rated capacity", "Only that it starts and runs — you haven't proven capacity, and light-load running risks wet stacking", "That the fuel is in good condition", "That the ATS will transfer correctly"],
+      "answer": 1,
+      "why": "Load bank testing applies an artificial load to prove rated capacity and loads the diesel enough to prevent wet stacking."
+    },
+    {
+      "topic": "Generators",
+      "q": "In freezing weather, a generator starts but is slow to accept full load. What do you suspect first?",
+      "choices": ["Fuel gelling in the supply line", "The block heater — a cold diesel starts slowly and can't take full load immediately", "Battery capacity loss from cold", "Governor droop setting"],
+      "answer": 1,
+      "why": "All four are plausible in cold weather, but the block heater exists specifically to keep the engine warm enough to take load quickly."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "You're scheduled to PM one CRAH in an N+1 room. Arriving on shift, you learn another CRAH failed overnight. What now?",
+      "choices": ["Proceed — the PM is scheduled and short", "Stop and escalate: you're already at N, and pulling a second unit removes the margin protecting the critical load", "Proceed but stay on site with tools ready", "Swap the PM to a different unit in the same room"],
+      "answer": 1,
+      "why": "Knowing your redundancy state before starting work is the practical meaning of concurrent maintainability."
+    },
+    {
+      "topic": "Monitoring",
+      "q": "The EPMS shows a feeder at 95% of rating; your clamp meter reads well under. What do you do?",
+      "choices": ["Trust the EPMS — it's the calibrated system", "Verify with a second method and investigate the discrepancy; a faulty CT or metering point and a real overload look identical on a screen", "Log the EPMS value and continue", "Reduce load on the feeder as a precaution"],
+      "answer": 1,
+      "why": "Be skeptical when metrics and anecdote differ. Assuming either reading is correct without verification is the mistake."
+    },
+    {
+      "topic": "Monitoring",
+      "q": "The BMS goes offline mid-shift. What's the immediate operational response?",
+      "choices": ["Shut down non-critical mechanical equipment", "Recognize you've lost visibility and automated alarming — increase physical rounds, check local panels, and escalate", "Switch cooling to manual control", "Nothing; equipment runs on local control"],
+      "answer": 1,
+      "why": "Equipment usually keeps running. What you lost is the ability to see a developing problem, which rounds now have to cover."
+    },
+    {
+      "topic": "Escalation",
+      "q": "You're 40 minutes into troubleshooting a rising temperature and haven't found it. The FM hasn't been told. What went wrong?",
+      "choices": ["Nothing — you should exhaust your own options first", "You should have escalated early; in a critical facility the cost of downtime far exceeds the cost of asking for help, and you escalate while continuing to work", "You should have called the equipment vendor rather than the FM", "You should have documented before escalating"],
+      "answer": 1,
+      "why": "Escalating early isn't giving up. Framed as protecting the customer's uptime, it's an Ownership answer."
+    },
+    {
+      "topic": "Escalation",
+      "q": "What's the strongest way to escalate?",
+      "choices": ["Report that there's a problem and ask what to do", "State the condition, the load risk, current redundancy state, what you've already checked and ruled out, and what you're doing next", "Send the BMS alarm screenshot and wait", "Escalate only after confirming the cause"],
+      "answer": 1,
+      "why": "Redundancy state and load risk are what let the person above you make a decision. This is also a good structure for a STAR Action section."
+    },
+    {
+      "topic": "Safety",
+      "q": "You're asked to work on a piece of equipment and the lockout point isn't clear. What do you do?",
+      "choices": ["Lock the nearest upstream breaker and verify at the equipment", "Stop and identify all energy sources first — including stored and secondary sources — before applying any locks; if you can't establish them, don't proceed", "Test for zero energy and proceed if it reads zero", "Ask a colleague to hold the disconnect open"],
+      "answer": 1,
+      "why": "Identify all energy sources is step one for a reason. Verification confirms your isolation; it can't substitute for knowing what needs isolating."
+    },
+    {
+      "topic": "Safety",
+      "q": "A vendor tech asks you to open a critical breaker to speed up their work, outside the written sequence. Your response?",
+      "choices": ["Comply — they're the equipment expert", "Decline and get the switching done to the approved procedure; operating out of sequence is how the critical load gets dropped", "Comply but document it afterward", "Ask a peer for a second opinion and proceed if they agree"],
+      "answer": 1,
+      "why": "Also a ready-made Have Backbone story: respectfully challenge, hold the line, then commit to the agreed path."
+    },
+    {
+      "topic": "Environment",
+      "q": "Space humidity has drifted low over several days. What's the risk and what do you check?",
+      "choices": ["Condensation risk; check dew point against surface temperatures", "Electrostatic discharge risk to electronics; check humidifier operation, control setpoints and whether outside air volume has increased", "Corrosion risk; check for water treatment carryover", "No risk as long as temperature is in range"],
+      "answer": 1,
+      "why": "Too low risks ESD; too high risks condensation, corrosion and conductive contamination. ASHRAE defines the envelope you're maintaining."
+    },
+    {
+      "topic": "Communication",
+      "q": "You made an error during a switching operation that caused a brief alarm but no load loss. What do you do?",
+      "choices": ["Correct it and move on since nothing was lost", "Report it, document it, and drive the deep dive into why the procedure allowed it — being vocally self-critical is an explicit Amazon expectation", "Report it only if someone asks", "Note it in the shift log without escalating"],
+      "answer": 1,
+      "why": "Earn Trust names being vocally self-critical even when it's awkward. Owning a near-miss is a stronger story than a clean record."
+    },
+    {
+      "topic": "Communication",
+      "q": "An interviewer describes a deliberately vague scenario and asks what you'd do. What should you do first?",
+      "choices": ["Give your best answer and caveat the assumptions", "Ask clarifying questions — workplace situations are often ambiguous, and asking shows how you dive deep on issues", "Ask them to rephrase the question", "Pick the most likely interpretation and commit to it"],
+      "answer": 1,
+      "why": "Asking clarifying questions is called out in the prep material as something that can make a huge difference. Ambiguity in the question is often the test."
+    },
+    {
+      "topic": "Communication",
+      "q": "Asked about a system your building doesn't have and you've never worked on, the best answer is:",
+      "choices": ["A confident description based on general principles", "Say you haven't worked on it, describe how you understand it to function and what problem it solves, then say what you'd want to learn and how you'd find out", "Redirect to a system you know well", "Decline and ask for a different question"],
+      "answer": 1,
+      "why": "Honest scores better than a confident guess that collapses under a follow-up. Interviewers are testing coherent explanation and ability to adapt, not memorization."
+    }
+  ]
+}

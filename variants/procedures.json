@@ -1,0 +1,217 @@
+{
+  "id": "procedures",
+  "title": "Test 6 — Standards, Procedures & Safe Work",
+  "blurb": "LOTO, NFPA and NEC, arc flash, writing and following MOPs, deep diving failures, permits, logs and spill response.",
+  "questions": [
+    {
+      "topic": "LOTO",
+      "q": "Put the LOTO sequence in the right order.",
+      "choices": ["Lock and tag → identify sources → shut down → verify zero energy → release stored energy", "Identify all energy sources → notify affected personnel → shut down and isolate → apply locks and tags → release stored energy → verify zero energy → begin work", "Shut down → verify zero energy → lock and tag → notify → begin work", "Notify → lock and tag → begin work → verify zero energy"],
+      "answer": 1,
+      "why": "Verification comes last, immediately before work — not earlier, because the state can change while you're still isolating."
+    },
+    {
+      "topic": "LOTO",
+      "q": "Verifying zero energy properly means:",
+      "choices": ["Reading the equipment's local voltage display", "Testing with a meter you have proven works on a known live source before AND after the test", "Confirming the breaker handle is in the off position", "Confirming the lock is applied and the tag signed"],
+      "answer": 1,
+      "why": "Live-dead-live. A meter that failed silently reads zero on an energized bus, which is the exact scenario that kills people."
+    },
+    {
+      "topic": "LOTO",
+      "q": "Which LOTO step is most commonly skipped?",
+      "choices": ["Notification of affected personnel", "Verification of zero energy", "Applying the tag", "Isolating the source"],
+      "answer": 1,
+      "why": "It's the step that feels redundant when you're confident, which is precisely why it's the one that matters."
+    },
+    {
+      "topic": "LOTO",
+      "q": "What counts as stored energy that must be released before work?",
+      "choices": ["Only capacitor charge in electronic equipment", "Capacitors, springs, pressure, elevated components, thermal energy and residual fluid — anything that can move or discharge after isolation", "Only battery banks", "Nothing, if the electrical source is locked out"],
+      "answer": 1,
+      "why": "Mechanical work in a data center — valves, dampers, pumps, actuators — has plenty of stored energy that isn't electrical."
+    },
+    {
+      "topic": "LOTO",
+      "q": "Another technician's lock is on a disconnect you need to open. What do you do?",
+      "choices": ["Remove it if you've confirmed they've left for the day", "Never remove it — find the owner; removal only happens through the site's documented lock-removal procedure with management involvement", "Add your own lock and proceed", "Call the FM and remove it with verbal authorization"],
+      "answer": 1,
+      "why": "Each lock represents a person who may still be exposed. There is a formal procedure for orphaned locks and it isn't a phone call."
+    },
+    {
+      "topic": "Standards",
+      "q": "NFPA 70 versus NFPA 70E:",
+      "choices": ["70 is electrical safety in the workplace; 70E is the National Electrical Code", "70 is the National Electrical Code governing installation; 70E is electrical safety in the workplace — arc flash, boundaries, PPE, energized work permits", "Both cover installation, at different voltage levels", "70E applies only to utilities"],
+      "answer": 1,
+      "why": "Installation versus working safely on what's installed. Interviewers use this to check whether you actually know the standards or just the acronyms."
+    },
+    {
+      "topic": "Standards",
+      "q": "Match: fire alarm code, sprinkler installation, sprinkler inspection and testing, IT equipment fire protection.",
+      "choices": ["NFPA 72, NFPA 13, NFPA 25, NFPA 75", "NFPA 13, NFPA 72, NFPA 75, NFPA 25", "NFPA 25, NFPA 13, NFPA 72, NFPA 70E", "NFPA 75, NFPA 25, NFPA 13, NFPA 72"],
+      "answer": 0,
+      "why": "72 alarm, 13 sprinkler install, 25 sprinkler ITM, 75 IT equipment. The material names NFPA familiarity as an expectation."
+    },
+    {
+      "topic": "Standards",
+      "q": "What is arc flash?",
+      "choices": ["A brief overvoltage transient on the supply", "An explosive release of energy from a fault arcing through air", "The flash of a breaker's arc chutes during normal switching", "A ground fault that clears through the earth"],
+      "answer": 1,
+      "why": "NFPA 70E governs boundaries, PPE categories and energized work permits for it."
+    },
+    {
+      "topic": "Standards",
+      "q": "An energized work permit is required when:",
+      "choices": ["Any work is performed inside an electrical room", "Work must be performed on or near energized parts because de-energizing would introduce additional hazards or is infeasible", "Voltage exceeds 480V regardless of task", "The work is performed by a contractor"],
+      "answer": 1,
+      "why": "The default is de-energize. The permit is the documented exception, not a routine form."
+    },
+    {
+      "topic": "Standards",
+      "q": "Grounding versus bonding:",
+      "choices": ["Grounding ties metallic parts together; bonding connects to earth", "Grounding connects the system to earth as a reference and a path for lightning and surges; bonding ties metallic parts together so fault current returns to the source and clears the overcurrent device", "They are interchangeable terms in the NEC", "Bonding applies to DC systems only"],
+      "answer": 1,
+      "why": "And the follow-up: the bonding path clears a ground fault, not the earth. Earth won't pass enough current to trip a breaker."
+    },
+    {
+      "topic": "Procedures",
+      "q": "Writing procedures is a stated EOT expectation. What does a MOP describe?",
+      "choices": ["The emergency response to an equipment failure", "The step-by-step method for performing a specific planned task, including the sequence, risk to the critical load and back-out steps", "The routine operating parameters of a system", "The maintenance interval schedule for a class of equipment"],
+      "answer": 1,
+      "why": "MOP = Method of Procedure for planned work. SOP covers normal operation; EOP covers emergency response."
+    },
+    {
+      "topic": "Procedures",
+      "q": "What should every MOP for critical work include beyond the steps themselves?",
+      "choices": ["The vendor's contact details", "The risk to the critical load, the redundancy state required to proceed, and a back-out plan if a step fails", "A cost estimate for parts", "The technician's certification numbers"],
+      "answer": 1,
+      "why": "The back-out plan is the part people omit and the part that saves you. Mentioning it unprompted signals real critical-facility thinking."
+    },
+    {
+      "topic": "Procedures",
+      "q": "Halfway through a MOP, a step doesn't produce the expected result. What is the right action?",
+      "choices": ["Improvise the nearest equivalent step and continue", "Stop, do not deviate from the written procedure — back out or escalate to get the procedure revised before continuing", "Skip the step and note it in the log", "Complete the remaining steps and troubleshoot afterward"],
+      "answer": 1,
+      "why": "Unplanned deviation inside a live electrical or mechanical sequence is how load gets dropped. Stopping is the disciplined answer, not the timid one."
+    },
+    {
+      "topic": "Procedures",
+      "q": "Why is critical breaker operation performed to a written sequence rather than from experience?",
+      "choices": ["Insurance requires documented switching", "Operating the wrong breaker or in the wrong order drops the critical load — for example, you transfer to bypass before opening the UPS, not after", "Breakers have a limited number of rated operations", "It creates an audit trail for the EPMS"],
+      "answer": 1,
+      "why": "Sequence is the whole thing. Familiarity is exactly when people skip the checklist."
+    },
+    {
+      "topic": "Procedures",
+      "q": "What does putting a system in maintenance mode accomplish?",
+      "choices": ["It de-energizes the equipment safely", "It disables automatic responses and alarms so the work doesn't trigger false alarms or unwanted control actions — and signals that the system is temporarily impaired", "It transfers load to the redundant unit", "It logs the work automatically in the BMS"],
+      "answer": 1,
+      "why": "It is not a substitute for LOTO. Maintenance mode manages signals and controls; LOTO manages energy."
+    },
+    {
+      "topic": "Fire procedure",
+      "q": "Before taking a fire protection system out of service, you must:",
+      "choices": ["Notify the monitoring company only", "Place it in maintenance mode or bypass, notify the fire department and facility management, notify occupants, and file an impairment form", "Obtain an energized work permit", "Post a fire watch and begin work"],
+      "answer": 1,
+      "why": "Amazon's material names maintenance mode, escalation to outside entities and impairment forms explicitly. This is the most likely procedural question in the loop."
+    },
+    {
+      "topic": "Fire procedure",
+      "q": "The single most important step after finishing fire system work:",
+      "choices": ["Closing the work order", "Restoring the system to normal and verifying it — valves open, panel normal, no bypasses left in place, impairment closed out", "Notifying the fire department that work is complete", "Resetting the panel event log"],
+      "answer": 1,
+      "why": "A system left silently impaired is worse than one everybody knows is down, because nobody is compensating for it."
+    },
+    {
+      "topic": "Fire procedure",
+      "q": "A fire watch is required when:",
+      "choices": ["Any hot work is performed", "Fire protection is out of service beyond a permitted duration", "The building is unoccupied overnight", "The panel is in trouble condition"],
+      "answer": 1,
+      "why": "It's a person assigned to patrol the impaired area watching for fire — a compensating measure, not a formality."
+    },
+    {
+      "topic": "Deep dive",
+      "q": "Amazon expects engineers to perform in-depth deep diving of equipment failures. What does a real root cause analysis require?",
+      "choices": ["Identifying the failed component and replacing it", "Continuing past the failed component to why it failed and why the failure wasn't caught — so the fix stays fixed", "Documenting the outage duration and customer impact", "Determining which technician was on shift"],
+      "answer": 1,
+      "why": "Insist on the Highest Standards: ensure defects don't get sent down the line and problems are fixed so they stay fixed."
+    },
+    {
+      "topic": "Deep dive",
+      "q": "A generator failed to start during a monthly exercise. Batteries tested fine at rest. What is the deep-dive question?",
+      "choices": ["Which battery brand was installed", "Why our test method (resting voltage) failed to detect a condition that only appears under crank load — and what test replaces it going forward", "Whether the exercise interval should be shortened", "Whether the block heater was energized"],
+      "answer": 1,
+      "why": "The failure is the detection method, not just the battery. That's the difference between a repair and a deep dive."
+    },
+    {
+      "topic": "Deep dive",
+      "q": "Which framing turns a technical fix into an Amazon-quality answer?",
+      "choices": ["Naming the manufacturer and part number replaced", "Stating the metric before and after, the scale of impact, and whether the change was adopted by other teams or used to coach others", "Describing how quickly you responded", "Explaining how the team collaborated on the repair"],
+      "answer": 1,
+      "why": "Data and metrics justify the decision; scale of impact is what interviewers probe next."
+    },
+    {
+      "topic": "Logs and permits",
+      "q": "Why does generator log taking have to be consistent with local air permits?",
+      "choices": ["Air permits set the maximum PUE for the site", "Standby diesel generators are permitted emissions sources with limits on run hours, so run time must be accurately recorded and reported", "Logs determine the fuel delivery schedule", "The permit requires load bank data specifically"],
+      "answer": 1,
+      "why": "The material names log taking consistent with local air permits as an EOT responsibility. It's a compliance obligation, not housekeeping."
+    },
+    {
+      "topic": "Logs and permits",
+      "q": "Why does fuel and fuel system maintenance matter on a unit that runs a few hours a year?",
+      "choices": ["Fuel cost rises with storage time", "Diesel degrades, absorbs water and grows microbial contamination while sitting for months — producing a unit that starts fine and then fails under load", "Permits require fuel replacement annually", "Fuel filters clog only during extended runs"],
+      "answer": 1,
+      "why": "Fuel polishing, water separation and testing exist for exactly this. Standby fuel sitting still is the hazard."
+    },
+    {
+      "topic": "Spill response",
+      "q": "You discover a diesel spill from a day tank. Your responsibility is to:",
+      "choices": ["Wash it down to the nearest drain and report the volume", "Contain it, prevent it reaching drains, use spill kits, notify per the site environmental procedure, and document", "Wait for the environmental contractor without intervening", "Report only if it exceeds the reportable quantity"],
+      "answer": 1,
+      "why": "Emergency response to a hazardous spill is named as an EOT responsibility. Keeping it out of drains is the step that determines how bad it gets."
+    },
+    {
+      "topic": "Spill response",
+      "q": "Why is bulk diesel storage a fire concern requiring specific controls?",
+      "choices": ["Diesel ignites more readily than gasoline", "Large quantities of combustible liquid require containment, spill response procedures, leak detection, separation and often dedicated suppression such as deluge", "Diesel vapors are heavier than air and displace oxygen", "Fuel tanks interfere with grounding systems"],
+      "answer": 1,
+      "why": "Deluge systems show up in fuel storage and transformer yards precisely because the hazard profile is different from IT space."
+    },
+    {
+      "topic": "Safe work",
+      "q": "Approaching a piece of equipment you've never worked on, the right first move is:",
+      "choices": ["Trace the system physically to build understanding", "Find the documentation and sequence of operation, understand what the system is trying to do, ask someone who knows it, and verify current state before changing anything", "Put it in maintenance mode and begin standard PM", "Wait for the manufacturer's technician"],
+      "answer": 1,
+      "why": "This is also the strongest honest answer when an interview question is outside your field experience."
+    },
+    {
+      "topic": "Safe work",
+      "q": "When should you escalate rather than keep working a problem?",
+      "choices": ["Once you've exhausted your own troubleshooting", "Early — in a critical facility the cost of downtime far exceeds the cost of asking for help; escalate while continuing to work the problem", "When a customer reports impact", "Only when the load is actually lost"],
+      "answer": 1,
+      "why": "Framing early escalation as customer protection turns what feels like an admission into an Ownership answer."
+    },
+    {
+      "topic": "Safe work",
+      "q": "Why is thermal imaging part of a preventive program?",
+      "choices": ["It verifies insulation resistance without a megger", "Infrared scanning of panels, breakers and terminations finds hot spots from loose or degrading connections before they fail or ignite", "It measures load balance across phases", "It confirms breaker trip settings"],
+      "answer": 1,
+      "why": "Loose terminations are the classic cause of electrical fires, which is why torque specs and IR scans matter."
+    },
+    {
+      "topic": "Safe work",
+      "q": "Breaker versus fuse:",
+      "choices": ["A breaker sacrifices itself; a fuse resets", "A breaker interrupts overcurrent and can be reset and used for switching; a fuse sacrifices itself and must be replaced, but is typically faster on high fault currents", "Fuses are used only on DC systems", "Breakers cannot provide short-circuit protection"],
+      "answer": 1,
+      "why": "The speed advantage of fuses on high fault current is the detail that separates a real answer from a memorized one."
+    },
+    {
+      "topic": "Safe work",
+      "q": "Coordination in a protective scheme means:",
+      "choices": ["All devices are set to the same trip curve", "The device closest to the fault trips first, isolating the smallest possible section instead of tripping upstream and dropping more load", "Upstream devices trip first to protect downstream equipment", "Protective relays are synchronized to a common clock"],
+      "answer": 1,
+      "why": "Poor coordination turns a rack-level fault into a room-level outage."
+    }
+  ]
+}

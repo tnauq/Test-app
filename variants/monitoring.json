@@ -1,0 +1,217 @@
+{
+  "id": "monitoring",
+  "title": "Test 5 — Redundancy, Monitoring & Racks",
+  "blurb": "Concurrent maintainability, tiers and N levels, BMS/EPMS, rounds and trending, busways, containment and rackdown response.",
+  "questions": [
+    {
+      "topic": "Redundancy",
+      "q": "Why is redundancy built into a data center, according to Amazon's own material?",
+      "choices": ["Solely to survive unplanned equipment failures", "To withstand an unplanned event and keep power to the critical load, AND to allow maintenance personnel to perform required PM on equipment", "To reduce PUE by sharing load across more units", "To meet utility interconnection requirements"],
+      "answer": 1,
+      "why": "Both halves matter. Without redundancy there is no safe window to do PM at all — that's the link between redundancy and concurrent maintainability."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "A facility has three chillers and needs two to carry design load. What is this?",
+      "choices": ["2N", "N+1", "N+2", "2N+1"],
+      "answer": 1,
+      "why": "N is the capacity required (two chillers). One spare beyond that is N+1."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "In a 2N electrical design, what does taking one entire distribution path out of service do to the load?",
+      "choices": ["Drops half the load until the path is restored", "Nothing — the load is fully duplicated and the other path carries it", "Forces a transfer to the generator", "Requires the UPS to run on battery for the duration"],
+      "answer": 1,
+      "why": "2N is a fully duplicated system. That's what makes whole-path maintenance possible."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "Concurrent maintainability and fault tolerance differ how?",
+      "choices": ["Concurrent maintainability covers planned work; fault tolerance covers surviving an unplanned failure", "Concurrent maintainability applies to mechanical only; fault tolerance to electrical only", "They are two terms for the same design property", "Fault tolerance is a subset of concurrent maintainability"],
+      "answer": 0,
+      "why": "Planned versus unplanned is the whole distinction. Both come from redundancy, but they answer different questions."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "Why does a mechanical technician specifically care about concurrent maintainability?",
+      "choices": ["It determines the chilled water setpoint", "It's what allows a chiller, pump or CRAH to be taken out of service for work while the critical load keeps running", "It sets the PM interval for rotating equipment", "It governs which loop is primary during free cooling"],
+      "answer": 1,
+      "why": "No redundancy means no safe window for PM — you'd have to choose between maintenance and uptime."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "You're assigned to PM a UPS in an N+1 configuration and one of the other units is already down for repair. What has changed?",
+      "choices": ["Nothing — N+1 means one unit can always be removed", "You've lost your redundancy margin; taking a second unit out puts the critical load at N or below, so this needs escalation before you proceed", "You should proceed but shorten the PM", "You should transfer the load to generator first"],
+      "answer": 1,
+      "why": "Knowing your current redundancy state before starting work is the practical form of this concept. Interviewers probe exactly this."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "What is a single point of failure?",
+      "choices": ["Any component that has failed more than once", "Any component whose failure drops the critical load", "The component with the longest lead time for replacement", "The first device to trip in a coordinated scheme"],
+      "answer": 1,
+      "why": "Data centers are designed to eliminate them so no single failure takes down customers."
+    },
+    {
+      "topic": "Redundancy",
+      "q": "Amazon's target uptime is stated as:",
+      "choices": ["99.9% or better", "99.99% or better", "99.9999% or better", "100%"],
+      "answer": 2,
+      "why": "Roughly 30 seconds of downtime per year. Quote the figure — it's stated directly in the prep material."
+    },
+    {
+      "topic": "BMS and EPMS",
+      "q": "Which system would you use to check chiller status, CRAH valve position and space humidity?",
+      "choices": ["EPMS", "BMS", "The rPDU controller", "The fire alarm control panel"],
+      "answer": 1,
+      "why": "BMS = Building Management System, the mechanical side: chillers, CRAHs, pumps, temperature, humidity, airflow, dampers, alarms."
+    },
+    {
+      "topic": "BMS and EPMS",
+      "q": "Which system would you use to check breaker status, load on a feeder and power quality?",
+      "choices": ["BMS", "EPMS", "SCADA", "The UPS local display only"],
+      "answer": 1,
+      "why": "EPMS = Electrical Power (or Plant) Monitoring System: metering, breaker status, power quality, load, alarms."
+    },
+    {
+      "topic": "BMS and EPMS",
+      "q": "What are the inputs to these monitoring systems?",
+      "choices": ["Operator log entries only", "Meters, devices and communications networks", "The PM work order system", "Utility SCADA feeds"],
+      "answer": 1,
+      "why": "The prep material names these explicitly — understanding the inputs is listed as part of the responsibility, not just reading the screen."
+    },
+    {
+      "topic": "BMS and EPMS",
+      "q": "The BMS goes offline. What is the operational consequence you should name first?",
+      "choices": ["Cooling equipment stops running", "You lose visibility and automated alarming, so detection now depends on physical rounds and local panels — increase round frequency and escalate", "PUE reporting is interrupted", "The EPMS takes over BMS points automatically"],
+      "answer": 1,
+      "why": "Equipment generally keeps running on local control. The loss is visibility, which is why knowing what actions to take on a monitoring system failure is a stated expectation."
+    },
+    {
+      "topic": "BMS and EPMS",
+      "q": "Generating reports and trends from the BMS/EPMS is expected of an EOT because:",
+      "choices": ["It is required for the annual impairment filing", "Trends show a condition developing over time — a bearing slowly heating, an approach temperature creeping up — which a spot reading can't", "Reports are needed to close out work orders", "It replaces the need for rounds"],
+      "answer": 1,
+      "why": "AWS is a data driven company. Analyzing metrics like PUE and WUE is called out as an EOT expectation."
+    },
+    {
+      "topic": "Rounds",
+      "q": "What is the value of physical rounds and log taking when you already have a BMS and EPMS?",
+      "choices": ["Rounds satisfy an insurance requirement", "They catch what sensors miss — leaks, noises, smells, corrosion, loose connections, heat", "They are how monitoring points get calibrated", "They provide a manual backup log if the BMS database is lost"],
+      "answer": 1,
+      "why": "Instrumentation doesn't see everything. Visual monitoring in the form of rounds and log taking is listed as an additional responsibility."
+    },
+    {
+      "topic": "Rounds",
+      "q": "During rounds you notice a faint burning smell near a switchboard but every reading is normal. What do you do?",
+      "choices": ["Log it and continue the round — the data doesn't support a fault", "Stop, investigate, and escalate — a smell with normal readings is exactly the case where instrumentation is blind, and loose terminations are the classic cause of electrical fires", "Reset the affected meter and re-read", "Wait for the next round to see if it persists"],
+      "answer": 1,
+      "why": "This also lines up with thermal imaging as a preventive tool for finding hot spots from loose or degrading connections."
+    },
+    {
+      "topic": "Rounds",
+      "q": "A meter reading and your physical observation disagree. Correct approach?",
+      "choices": ["Trust the calibrated instrument over subjective observation", "Investigate rather than assume the instrument is right, and verify with a second method", "Log the discrepancy for the next shift", "Replace the sensor and re-read"],
+      "answer": 1,
+      "why": "A faulty sensor and a real fault look identical on a screen. Dive Deep explicitly names being skeptical when metrics and anecdote differ."
+    },
+    {
+      "topic": "Racks",
+      "q": "What is an EOT's responsibility at the rack level?",
+      "choices": ["Installing and cabling servers into racks", "Not rack-level tasks, but ensuring racks are properly powered up and cooled, and current is properly balanced across sources", "Managing rack capacity planning for customers", "Configuring rPDU network settings"],
+      "answer": 1,
+      "why": "The prep material is explicit: engineers aren't responsible for rack level tasks, but they are responsible for power, cooling and balance."
+    },
+    {
+      "topic": "Racks",
+      "q": "Why must current be balanced across both sources feeding a rack?",
+      "choices": ["To keep the neutral from carrying excessive current", "To prevent overloading a single source — if the heavily loaded side fails, the other may not be able to carry the whole load", "To reduce harmonic distortion at the PDU", "Balance is a metering convention, not an operational concern"],
+      "answer": 1,
+      "why": "Preventing overload of a single source is the exact phrasing in the material. It's what makes dual-feed redundancy real rather than nominal."
+    },
+    {
+      "topic": "Racks",
+      "q": "Busway and tap box, in order:",
+      "choices": ["Overhead bus-bar distribution running above the rows; the point where a circuit is tapped off it to feed a rack without cutting conductors", "A cable tray system; a junction box for splices", "The floor-level distribution unit; its output breaker panel", "The in-rack power strip; its input connector"],
+      "answer": 0,
+      "why": "The tap box is what makes adding or moving rack feeds a plug-in operation instead of an electrical modification."
+    },
+    {
+      "topic": "Racks",
+      "q": "What is an rPDU?",
+      "choices": ["A redundant PDU paired with the primary floor unit", "The power strip in the rack that servers plug into", "A rack-mounted transfer switch", "A remote PDU controller on the building network"],
+      "answer": 1,
+      "why": "The PDU is the floor-level unit doing transformation and branch distribution; the rPDU is the in-rack strip."
+    },
+    {
+      "topic": "Racks",
+      "q": "Hot aisle / cold aisle containment exists to:",
+      "choices": ["Reduce noise exposure in the data hall", "Keep cold supply air and hot exhaust air physically separated so the two streams don't mix", "Allow individual racks to be isolated during maintenance", "Create positive pressure against outside contaminants"],
+      "answer": 1,
+      "why": "Mixing means you cool air that's already cold, waste energy, raise PUE, and can leave server intakes hot even when room average looks fine."
+    },
+    {
+      "topic": "Racks",
+      "q": "EOTs are expected to be first responders to what rack-level event?",
+      "choices": ["Server hardware failures", "Rackdown events", "Network switch outages", "Cable management violations"],
+      "answer": 1,
+      "why": "Named directly in the prep material. It's the one rack-level thing that's squarely an EOT responsibility."
+    },
+    {
+      "topic": "Racks",
+      "q": "A rack has gone down. What is the first thing to establish?",
+      "choices": ["Which customer workloads were affected", "Whether it lost one source or both — one source down means the rack should have stayed up on the other, which points to a balance, breaker or cord problem rather than an upstream failure", "Whether the room temperature is within ASHRAE limits", "Whether the rPDU firmware is current"],
+      "answer": 1,
+      "why": "Dual-fed racks shouldn't drop on a single source loss. If it did, the redundancy was not actually there — often because load wasn't balanced."
+    },
+    {
+      "topic": "Racks",
+      "q": "You find a rack drawing 80% of its load from the A source and 20% from B. Why does that matter even though nothing has failed?",
+      "choices": ["It causes premature rPDU wear", "If A fails, B has to pick up the full load and may trip — the rack looks redundant but isn't", "It skews PUE calculations", "It creates a phase imbalance at the transformer"],
+      "answer": 1,
+      "why": "Latent single point of failure. This is a strong example to bring into an Ownership or Dive Deep story."
+    },
+    {
+      "topic": "Efficiency metrics",
+      "q": "PUE is:",
+      "choices": ["IT equipment power ÷ total facility power", "Total facility power ÷ IT equipment power", "Cooling power ÷ total facility power", "Total facility power ÷ design capacity"],
+      "answer": 1,
+      "why": "1.0 is theoretically perfect; cooling is the main driver upward. AWS expects EOTs to analyze it as a key metric."
+    },
+    {
+      "topic": "Efficiency metrics",
+      "q": "WUE measures:",
+      "choices": ["Water consumed per unit of IT energy", "Water discharged as blowdown per year", "Cooling tower efficiency versus wet bulb", "Makeup water as a percentage of evaporation"],
+      "answer": 0,
+      "why": "Evaporative cooling lowers PUE but raises WUE. Naming that as a real tradeoff rather than a free win is what scores."
+    },
+    {
+      "topic": "Cooling modes",
+      "q": "Which cooling modes does the prep material name, and what governs which one is used?",
+      "choices": ["Free cooling, recirculation and mechanical cooling — selected by outside conditions and load, with direct effects on PUE and WUE", "Chilled water and DX only, selected by building design", "Economizer and emergency, selected by the BMS schedule", "Evaporative and conductive, selected by season"],
+      "answer": 0,
+      "why": "Understanding when each mode is used and how it affects PUE and WUE is called out as an explicit expectation."
+    },
+    {
+      "topic": "Cooling modes",
+      "q": "The plant switches from free cooling to mechanical cooling. What has most likely happened?",
+      "choices": ["Chilled water flow dropped below minimum", "Outside conditions — wet bulb or dry bulb — rose past the point where the tower or outside air can carry the load alone", "A CRAH went into maintenance mode", "WUE exceeded its target"],
+      "answer": 1,
+      "why": "Free cooling depends on ambient. That's why facilities get built in cool, dry climates — more free cooling hours, lower PUE."
+    },
+    {
+      "topic": "Response",
+      "q": "The EPMS shows a breaker open that your rounds sheet says should be closed. First move?",
+      "choices": ["Close the breaker to restore the normal configuration", "Verify the actual physical position and find out why before changing anything — the alarm may be a status point fault or a real trip with a cause", "Log it and report at shift change", "Reset the EPMS point"],
+      "answer": 1,
+      "why": "Never operate a critical breaker to 'fix' a display. Verify state, understand cause, follow the procedure."
+    },
+    {
+      "topic": "Response",
+      "q": "Why does knowing your building's specific tier and N level matter during an emergency, not just during PM?",
+      "choices": ["It determines which vendor to call", "It tells you how much margin you have left — what you can lose next without dropping load — which drives how urgently you escalate", "It sets the alarm thresholds in the BMS", "It determines the order of load shed"],
+      "answer": 1,
+      "why": "Redundancy state is situational awareness. \"We're down to N\" is a different emergency than \"we're still at N+1.\""
+    }
+  ]
+}
