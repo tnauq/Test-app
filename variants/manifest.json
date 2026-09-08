@@ -3,6 +3,9 @@
     { "file": "electrical.json", "label": "Electrical" },
     { "file": "mechanical.json", "label": "Mechanical" },
     { "file": "fire.json", "label": "Fire & Life Safety" },
+    { "file": "monitoring.json", "label": "Redundancy, Monitoring & Racks" },
+    { "file": "procedures.json", "label": "Standards & Procedures" },
+    { "file": "scenarios.json", "label": "Scenarios & Judgment" },
     { "file": "leadership.json", "label": "Leadership Principles" }
   ]
 }
